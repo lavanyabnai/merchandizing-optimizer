@@ -1,0 +1,233 @@
+# =============================================================================
+# Prometheus Alerting Rules
+# =============================================================================
+# Alert rules for Assortment Optimizer Service
+
+groups:
+  # ===========================================================================
+  # Service Health Alerts
+  # ===========================================================================
+  - name: service_health
+    rules:
+      # Service Down Alert
+      - alert: ServiceDown
+        expr: up{job="assortment-api"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Assortment Optimizer API instance down"
+          description: "{{ $labels.instance }} has been unreachable for more than 1 minute."
+
+      # No Requests Alert (possible routing issue)
+      - alert: NoRequests
+        expr: rate(http_requests_total{job="assortment-api"}[5m]) == 0
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "No requests received"
+          description: "{{ $labels.instance }} has not received any requests for 5 minutes."
+
+  # ===========================================================================
+  # Error Rate Alerts
+  # ===========================================================================
+  - name: error_rates
+    rules:
+      # High Error Rate Alert
+      - alert: HighErrorRate
+        expr: |
+          (
+            sum(rate(http_requests_total{job="assortment-api", status_code=~"5.."}[5m])) by (instance)
+            /
+            sum(rate(http_requests_total{job="assortment-api"}[5m])) by (instance)
+          ) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High error rate detected"
+          description: "{{ $labels.instance }} has an error rate above 5% (current: {{ $value | humanizePercentage }})"
+
+      # Client Error Rate Alert
+      - alert: HighClientErrorRate
+        expr: |
+          (
+            sum(rate(http_requests_total{job="assortment-api", status_code=~"4.."}[5m])) by (instance)
+            /
+            sum(rate(http_requests_total{job="assortment-api"}[5m])) by (instance)
+          ) > 0.10
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High client error rate detected"
+          description: "{{ $labels.instance }} has a client error rate above 10% (current: {{ $value | humanizePercentage }})"
+
+  # ===========================================================================
+  # Latency Alerts
+  # ===========================================================================
+  - name: latency
+    rules:
+      # High Latency (P95)
+      - alert: HighLatencyP95
+        expr: |
+          histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket{job="assortment-api"}[5m])) by (le, instance))
+          > 0.5
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High P95 latency detected"
+          description: "{{ $labels.instance }} P95 latency is above 500ms (current: {{ $value | humanizeDuration }})"
+
+      # Critical Latency (P99)
+      - alert: CriticalLatencyP99
+        expr: |
+          histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket{job="assortment-api"}[5m])) by (le, instance))
+          > 2.0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Critical P99 latency detected"
+          description: "{{ $labels.instance }} P99 latency is above 2s (current: {{ $value | humanizeDuration }})"
+
+      # Slow Optimization
+      - alert: SlowOptimization
+        expr: |
+          histogram_quantile(0.95, sum(rate(optimization_duration_seconds_bucket{job="assortment-api"}[5m])) by (le))
+          > 5.0
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Optimization is running slowly"
+          description: "P95 optimization duration is above 5s (current: {{ $value | humanizeDuration }})"
+
+      # Slow Simulation
+      - alert: SlowSimulation
+        expr: |
+          histogram_quantile(0.95, sum(rate(simulation_duration_seconds_bucket{job="assortment-api"}[5m])) by (le))
+          > 10.0
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Simulation is running slowly"
+          description: "P95 simulation duration is above 10s (current: {{ $value | humanizeDuration }})"
+
+  # ===========================================================================
+  # Cache Alerts
+  # ===========================================================================
+  - name: cache
+    rules:
+      # Low Cache Hit Rate
+      - alert: LowCacheHitRate
+        expr: |
+          (
+            sum(rate(cache_hits_total{job="assortment-api"}[5m]))
+            /
+            (sum(rate(cache_hits_total{job="assortment-api"}[5m])) + sum(rate(cache_misses_total{job="assortment-api"}[5m])))
+          ) < 0.5
+        for: 15m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Low cache hit rate"
+          description: "Cache hit rate is below 50% (current: {{ $value | humanizePercentage }})"
+
+      # Cache Errors
+      - alert: CacheErrors
+        expr: rate(cache_errors_total{job="assortment-api"}[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Cache errors detected"
+          description: "Cache error rate is elevated (current: {{ $value }} errors/sec)"
+
+  # ===========================================================================
+  # Database Alerts
+  # ===========================================================================
+  - name: database
+    rules:
+      # Connection Pool Exhaustion
+      - alert: DBPoolExhausted
+        expr: |
+          db_pool_checked_out / db_pool_size > 0.9
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Database connection pool nearly exhausted"
+          description: "Connection pool utilization is above 90% ({{ $value | humanizePercentage }})"
+
+      # High Pool Overflow
+      - alert: DBPoolOverflow
+        expr: db_pool_overflow > 5
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Database connection pool overflow"
+          description: "Pool overflow count is {{ $value }}, indicating high connection demand"
+
+      # Slow Database Queries
+      - alert: SlowDatabaseQueries
+        expr: |
+          histogram_quantile(0.95, sum(rate(db_query_duration_seconds_bucket{job="assortment-api"}[5m])) by (le, query_type))
+          > 0.5
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Slow database queries detected"
+          description: "P95 {{ $labels.query_type }} query duration is above 500ms (current: {{ $value | humanizeDuration }})"
+
+  # ===========================================================================
+  # Business Logic Alerts
+  # ===========================================================================
+  - name: business
+    rules:
+      # Optimization Failure Rate
+      - alert: HighOptimizationFailureRate
+        expr: |
+          (
+            sum(rate(optimization_runs_total{status="error"}[5m]))
+            /
+            sum(rate(optimization_runs_total[5m]))
+          ) > 0.1
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High optimization failure rate"
+          description: "More than 10% of optimizations are failing (current: {{ $value | humanizePercentage }})"
+
+      # Simulation Failure Rate
+      - alert: HighSimulationFailureRate
+        expr: |
+          (
+            sum(rate(simulation_runs_total{status="error"}[5m]))
+            /
+            sum(rate(simulation_runs_total[5m]))
+          ) > 0.1
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High simulation failure rate"
+          description: "More than 10% of simulations are failing (current: {{ $value | humanizePercentage }})"
+
+      # Poor Clustering Quality
+      - alert: PoorClusteringQuality
+        expr: |
+          histogram_quantile(0.50, sum(rate(clustering_silhouette_score_bucket[1h])) by (le))
+          < 0.3
+        for: 1h
+        labels:
+          severity: warning
+        annotations:
+          summary: "Poor clustering quality"
+          description: "Median silhouette score is below 0.3 (current: {{ $value }})"

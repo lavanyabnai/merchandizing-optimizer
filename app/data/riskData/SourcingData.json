@@ -1,0 +1,29 @@
+[
+  {
+    "delivery": "Customer",
+    "product": "Product A",
+    "type": "closest(Dynamic Sourcing)",
+    "parameter": "No parameters",
+    "sources": "DC",
+    "timePeriod": "All periods",
+    "inculusionType": "Include"
+  },
+  {
+    "delivery": "Factory Berlin",
+    "product": "Product A",
+    "type": "closest(Dynamic Sourcing)",
+    "parameter": "No parameters",
+    "sources": "supplier",
+    "timePeriod": "All periods",
+    "inculusionType": "Include"
+  },
+   {
+     "delivery": "DC",
+     "product": "Product A",
+     "type": "closest(Dynamic Sourcing)",
+     "parameter": "No parameters",
+     "sources": "Factory Berlin",
+     "timePeriod": "All periods",
+     "inculusionType": "Include"
+   }
+]

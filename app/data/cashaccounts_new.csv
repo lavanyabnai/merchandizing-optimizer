@@ -1,0 +1,8 @@
+name,facilityId,initialCash,currency,interest
+bat,1,1000,USD,1.00
+car,1,2000,USD,1.00
+van,1,3000,USD,1.00
+bike,1,4000,USD,1.00
+truck,1,5000,USD,1.00
+scooter,1,6000,USD,1.00
+cycle,1,7000,USD,1.00

@@ -1,0 +1,18 @@
+[
+  {
+    "scenario_id": "SCEN-1",
+    "description": "Test scenario",
+    "CreatedAt": "2024-02-20T10:38:08.000Z",
+    "UpdatedAt": "2024-02-26T09:34:30.000Z",
+    "module": "Sales & Operations Planning",
+    "Status": "Submitted"
+  },
+   {
+    "scenario_id": "SCEN-2",
+    "description": "Describe your scenario",
+    "CreatedAt": "2024-02-29T13:39:35.159Z",
+    "UpdatedAt": "2024-02-29T13:39:35.000Z",
+    "module": "Sales & Operations Planning",
+    "Status": "Open"
+  }
+]

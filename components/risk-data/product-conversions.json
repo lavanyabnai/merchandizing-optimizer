@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "product": "Shoes",
+    "amountFrom": 500,
+    "unitFrom": "pcs",
+    "amountTo": 1,
+    "unitTo": "m³"
+  },
+  {
+    "id": 2,
+    "product": "T-Shirt",
+    "amountFrom": 1000,
+    "unitFrom": "pcs",
+    "amountTo": 0.8,
+    "unitTo": "m³"
+  },
+  {
+    "id": 3,
+    "product": "Jeans",
+    "amountFrom": 300,
+    "unitFrom": "pcs",
+    "amountTo": 0.9,
+    "unitTo": "m³"
+  },
+  {
+    "id": 4,
+    "product": "Jacket",
+    "amountFrom": 200,
+    "unitFrom": "pcs",
+    "amountTo": 1.2,
+    "unitTo": "m³"
+  },
+  {
+    "id": 5,
+    "product": "Socks",
+    "amountFrom": 2000,
+    "unitFrom": "pcs",
+    "amountTo": 0.5,
+    "unitTo": "m³"
+  },
+  {
+    "id": 6,
+    "product": "Shoes",
+    "amountFrom": 1,
+    "unitFrom": "pcs",
+    "amountTo": 0.3,
+    "unitTo": "kg"
+  },
+  {
+    "id": 7,
+    "product": "T-Shirt",
+    "amountFrom": 1,
+    "unitFrom": "pcs",
+    "amountTo": 0.15,
+    "unitTo": "kg"
+  },
+  {
+    "id": 8,
+    "product": "Jeans",
+    "amountFrom": 1,
+    "unitFrom": "pcs",
+    "amountTo": 0.5,
+    "unitTo": "kg"
+  },
+  {
+    "id": 9,
+    "product": "Jacket",
+    "amountFrom": 1,
+    "unitFrom": "pcs",
+    "amountTo": 0.8,
+    "unitTo": "kg"
+  },
+  {
+    "id": 10,
+    "product": "Socks",
+    "amountFrom": 1,
+    "unitFrom": "pcs",
+    "amountTo": 0.05,
+    "unitTo": "kg"
+  }
+]

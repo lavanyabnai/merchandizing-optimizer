@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Raining season",
+    "eventType": "Path state",
+    "parameters": "Path: Path Factory Qui Nhon to Port Vung Tau",
+    "occurrenceType": "Random",
+    "occurrenceTime": "7/1/23 - 8/30/23",
+    "trigger": "",
+    "probability": 0.5
+  },
+  {
+    "id": 2,
+    "name": "End of raining season",
+    "eventType": "Path state",
+    "parameters": "Path: Path Factory Qui Nhon to Port Vung Tau",
+    "occurrenceType": "Date",
+    "occurrenceTime": "9/1/23 12:00 AM",
+    "trigger": "Raining season",
+    "probability": 1
+  },
+  {
+    "id": 3,
+    "name": "Increase in Demand",
+    "eventType": "Demand coefficient",
+    "parameters": "Coefficient: 1.1, Customer: All",
+    "occurrenceType": "Random",
+    "occurrenceTime": "4/1/23 - 6/30/23",
+    "trigger": "",
+    "probability": 0.8
+  },
+  {
+    "id": 4,
+    "name": "Decrease in Demand",
+    "eventType": "Demand coefficient",
+    "parameters": "Coefficient: 0.7, Customer: All",
+    "occurrenceType": "Random",
+    "occurrenceTime": "8/1/23 - 9/30/23",
+    "trigger": "",
+    "probability": 0.9
+  },
+  {
+    "id": 5,
+    "name": "Factory failure",
+    "eventType": "Facility state",
+    "parameters": "Object: Factory Qui Nhon, State: Closed",
+    "occurrenceType": "Random",
+    "occurrenceTime": "1/1/23 - 12/31/23",
+    "trigger": "",
+    "probability": 0.5
+  },
+  {
+    "id": 6,
+    "name": "Factory recovery",
+    "eventType": "Facility state",
+    "parameters": "Object: Factory Qui Nhon, State: Open",
+    "occurrenceType": "Delay (days)",
+    "occurrenceTime": "7",
+    "trigger": "Factory failure",
+    "probability": 1
+  },
+  {
+    "id": 7,
+    "name": "Holiday season demand",
+    "eventType": "Demand coefficient",
+    "parameters": "Coefficient: 1.5, Customer: All",
+    "occurrenceType": "Date",
+    "occurrenceTime": "11/15/23 - 12/31/23",
+    "trigger": "",
+    "probability": 1
+  },
+  {
+    "id": 8,
+    "name": "Port congestion",
+    "eventType": "Path state",
+    "parameters": "Path: Path Port Vung Tau to Port Kobe",
+    "occurrenceType": "Random",
+    "occurrenceTime": "3/1/23 - 5/31/23",
+    "trigger": "",
+    "probability": 0.6
+  },
+  {
+    "id": 9,
+    "name": "Maintenance shutdown",
+    "eventType": "Facility state",
+    "parameters": "Object: DC Tokyo, State: Closed",
+    "occurrenceType": "Date",
+    "occurrenceTime": "10/1/23 - 10/7/23",
+    "trigger": "",
+    "probability": 1
+  },
+  {
+    "id": 10,
+    "name": "Transportation strike",
+    "eventType": "Path state",
+    "parameters": "Path: All paths, State: Closed",
+    "occurrenceType": "Random",
+    "occurrenceTime": "5/1/23 - 5/15/23",
+    "trigger": "",
+    "probability": 0.3
+  }
+]

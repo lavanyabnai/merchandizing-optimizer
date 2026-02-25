@@ -1,0 +1,34 @@
+[run]
+# Coverage configuration for Assortment Optimizer Service
+source = app
+branch = True
+omit =
+    */tests/*
+    */__pycache__/*
+    */migrations/*
+    */venv/*
+    */.venv/*
+    app/main.py
+
+[report]
+# Reporting configuration
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    if __name__ == .__main__.:
+    raise NotImplementedError
+    if TYPE_CHECKING:
+    @abstractmethod
+    @abc.abstractmethod
+
+show_missing = True
+precision = 2
+
+# Target coverage percentage
+fail_under = 80
+
+[html]
+directory = htmlcov
+
+[xml]
+output = coverage.xml

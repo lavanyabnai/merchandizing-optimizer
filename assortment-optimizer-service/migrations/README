@@ -1,0 +1,37 @@
+Alembic Migrations for Assortment Optimizer Service
+
+This directory contains database migration scripts managed by Alembic.
+
+## Usage
+
+### Generate a new migration (after model changes):
+```bash
+alembic revision --autogenerate -m "Description of changes"
+```
+
+### Apply all pending migrations:
+```bash
+alembic upgrade head
+```
+
+### Rollback one migration:
+```bash
+alembic downgrade -1
+```
+
+### View current migration status:
+```bash
+alembic current
+```
+
+### View migration history:
+```bash
+alembic history
+```
+
+## Environment
+
+Set the DATABASE_URL environment variable to override the default connection:
+```bash
+export DATABASE_URL=postgresql+asyncpg://user:pass@host:5432/dbname
+```

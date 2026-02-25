@@ -1,0 +1,56 @@
+[
+  {
+    "facility": "Factory Berlin",
+    "expenseType": "Carrying Cost",
+    "value": 0.005,
+    "currency": "USD",
+    "timeUnit": "day",
+    "productUnit": "pcs",
+    "timePeriod": "(All Periods)"
+  },
+  {
+    "facility": "Factory Berlin",
+    "expenseType": "Other Costs",
+    "value": 2630,
+    "currency": "USD",
+    "timeUnit": "day",
+    "productUnit": "",
+    "timePeriod": "(All Periods)"
+  },
+  {
+    "facility": "DC Spain",
+    "expenseType": "Other Costs",
+    "value": 70,
+    "currency": "USD",
+    "timeUnit": "day",
+    "productUnit": "",
+    "timePeriod": "(All Periods)"
+  },
+  {
+    "facility": "DC Berlin",
+    "expenseType": "Other Costs",
+    "value": 100,
+    "currency": "USD",
+    "timeUnit": "day",
+    "productUnit": "",
+    "timePeriod": "(All Periods)"
+  },
+  {
+    "facility": "DC Berlin",
+    "expenseType": "Carrying Cost",
+    "value": 0.2,
+    "currency": "USD",
+    "timeUnit": "day",
+    "productUnit": "Beer Pallets",
+    "timePeriod": "(All Periods)"
+  },
+  {
+    "facility": "DC Spain",
+    "expenseType": "Carrying Cost",
+    "value": 0.1,
+    "currency": "USD",
+    "timeUnit": "day",
+    "productUnit": "Beer Pallets",
+    "timePeriod": "(All Periods)"
+  }
+]

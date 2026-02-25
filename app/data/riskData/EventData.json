@@ -1,0 +1,21 @@
+[
+  {
+    "Name": "Event_1",
+    "EventType": "Facility State",
+    "Parameters": "DC Berlin",
+    "OccurrenceType": "Date",
+    "OccurrenceTime": "2023-10-19",
+    "Trigger": "",
+    "Probability": 1
+  },
+  {
+    "Name": "Event_2",
+    "EventType": "Weather",
+    "Parameters": "Facility State",
+    "OccurrenceType": "Delay (days)",
+    "OccurrenceTime": "60",
+    "Trigger": "Events",
+    "Probability": 1
+  }
+
+]

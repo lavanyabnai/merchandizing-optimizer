@@ -1,0 +1,21 @@
+store_code,name,format,location_type,income_index,total_facings,num_shelves,shelf_width_inches,weekly_traffic,region,is_active
+STR-001,Downtown Metro,superstore,urban,high,120,5,48.0,15000,Northeast,true
+STR-002,Suburban Plaza,standard,suburban,medium,80,4,48.0,8500,Northeast,true
+STR-003,Main Street Market,standard,urban,medium,75,4,48.0,7200,Northeast,true
+STR-004,Highway Express,express,suburban,medium,45,3,36.0,4500,Northeast,true
+STR-005,University Corner,express,urban,low,40,3,36.0,6000,Northeast,true
+STR-006,Lakeside Center,superstore,suburban,high,110,5,48.0,12000,Midwest,true
+STR-007,Oak Park Standard,standard,suburban,medium,85,4,48.0,9000,Midwest,true
+STR-008,Industrial District,express,urban,low,50,3,36.0,3500,Midwest,true
+STR-009,College Town,standard,urban,low,70,4,48.0,8000,Midwest,true
+STR-010,Riverside Mall,superstore,suburban,high,125,5,48.0,14000,Southeast,true
+STR-011,Historic District,standard,urban,high,90,4,48.0,7500,Southeast,true
+STR-012,Beach Boulevard,standard,suburban,medium,80,4,48.0,9500,Southeast,true
+STR-013,Rural Route 9,express,rural,low,35,3,36.0,2000,Southeast,true
+STR-014,Mountain View Plaza,superstore,suburban,medium,100,5,48.0,11000,West,true
+STR-015,Tech Hub Market,standard,urban,high,95,4,48.0,10000,West,true
+STR-016,Valley Express,express,suburban,medium,48,3,36.0,5000,West,true
+STR-017,Desert Springs,standard,rural,medium,65,4,48.0,4000,Southwest,true
+STR-018,Border Town Market,standard,suburban,low,70,4,48.0,5500,Southwest,true
+STR-019,Airport Terminal,express,urban,high,55,3,36.0,8000,Southwest,true
+STR-020,Farmland Junction,express,rural,low,30,3,36.0,1500,Midwest,true

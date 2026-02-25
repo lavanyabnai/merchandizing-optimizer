@@ -1,0 +1,74 @@
+ [
+    {
+      "Measure": "Target Plan (Revenue)",
+      "Jan": 530151,
+      "Feb": 449918,
+      "Mar": 365953,
+      "Apr": 611547,
+      "May": 442918,
+      "Jun": 917341
+    },
+    {
+      "Measure": "Target Plan ",
+      "Jan": 6491,
+      "Feb": 108555,
+      "Mar": 5800,
+      "Apr": 108555,
+      "May": 196671,
+      "Jun": 120288
+    },
+    {
+      "Measure": "Financial Forcast (Revenue)",
+      "Jan": 679077,
+      "Feb": 706024,
+      "Mar": 343477,
+      "Apr": 618713,
+      "May": 1122114,
+      "Jun": 1326208
+    },
+    {
+      "Measure": "Financial Forcast ",
+      "Jan": 8358,
+      "Feb": 11388,
+      "Mar": 5464,
+      "Apr": 119949,
+      "May": 76259,
+      "Jun": 21572
+    },
+    {
+      "Measure": "POS (Revenue)",
+      "Jan": 476355.7112,
+      "Feb": 488769.7081,
+      "Mar": 199629,
+      "Apr": 486355.6521,
+      "May": 457769.7081,
+      "Jun": 1032087.7112
+    },
+    {
+      "Measure": "POS ",
+      "Jan": 64205,
+      "Feb": 69387,
+      "Mar": 3186,
+      "Apr": 214995,
+      "May": 70487,
+      "Jun": 214795
+    },
+    {
+      "Measure": "Achievement Rate",
+      "Jan": 0.4689,
+      "Feb": 0.644,
+      "Mar": 0.5812,
+      "Apr": 0.5689,
+      "May": 0.64,
+      "Jun": 0.65
+    },
+    {
+      "Measure": "Weighted Sales Price",
+      "Jan": 12214.625,
+      "Feb": 12329.25,
+      "Mar": 1471,
+      "Apr": 26030,
+      "May": 12379.25,
+      "Jun": 13074.375
+    }
+  ]

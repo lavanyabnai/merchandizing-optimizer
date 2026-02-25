@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "deliveryDestination": "Okayama",
+    "sources": "DC Itami",
+    "product": "Shoes",
+    "type": "Most Inventory (Dynamic)",
+    "parameters": "No parameters",
+    "timePeriod": "Basic period",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 2,
+    "deliveryDestination": "Matsuyama",
+    "sources": "DC Itami",
+    "product": "Shoes",
+    "type": "Most Inventory (Dynamic)",
+    "parameters": "No parameters",
+    "timePeriod": "Basic period",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 3,
+    "deliveryDestination": "Sendai",
+    "sources": "DC Tokyo",
+    "product": "Shoes",
+    "type": "Most Inventory (Dynamic)",
+    "parameters": "No parameters",
+    "timePeriod": "Basic period",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 4,
+    "deliveryDestination": "DC Itami",
+    "sources": "Port Kobe",
+    "product": "Shoes",
+    "type": "Most Inventory (Dynamic)",
+    "parameters": "No parameters",
+    "timePeriod": "Basic period",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 5,
+    "deliveryDestination": "Port Vung Tau",
+    "sources": "Factory Qui Nhon",
+    "product": "Shoes",
+    "type": "Most Inventory (Dynamic)",
+    "parameters": "No parameters",
+    "timePeriod": "Basic period",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 6,
+    "deliveryDestination": "Kitakyushu",
+    "sources": "DC Itami",
+    "product": "Shoes",
+    "type": "Most Inventory (Dynamic)",
+    "parameters": "No parameters",
+    "timePeriod": "Basic period",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 7,
+    "deliveryDestination": "Osaka",
+    "sources": "DC Itami",
+    "product": "Shoes",
+    "type": "Most Inventory (Dynamic)",
+    "parameters": "No parameters",
+    "timePeriod": "Basic period",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 8,
+    "deliveryDestination": "Tokyo",
+    "sources": "DC Tokyo",
+    "product": "Shoes",
+    "type": "Most Inventory (Dynamic)",
+    "parameters": "No parameters",
+    "timePeriod": "Basic period",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 9,
+    "deliveryDestination": "Yokohama",
+    "sources": "DC Tokyo",
+    "product": "Shoes",
+    "type": "Most Inventory (Dynamic)",
+    "parameters": "No parameters",
+    "timePeriod": "Basic period",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 10,
+    "deliveryDestination": "Nagoya",
+    "sources": "DC Itami",
+    "product": "Shoes",
+    "type": "Most Inventory (Dynamic)",
+    "parameters": "No parameters",
+    "timePeriod": "Basic period",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 11,
+    "deliveryDestination": "Kobe",
+    "sources": "DC Itami",
+    "product": "Shoes",
+    "type": "Most Inventory (Dynamic)",
+    "parameters": "No parameters",
+    "timePeriod": "Basic period",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 12,
+    "deliveryDestination": "Kyoto",
+    "sources": "DC Itami",
+    "product": "Shoes",
+    "type": "Most Inventory (Dynamic)",
+    "parameters": "No parameters",
+    "timePeriod": "Basic period",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 13,
+    "deliveryDestination": "Fukuoka",
+    "sources": "DC Itami",
+    "product": "Shoes",
+    "type": "Most Inventory (Dynamic)",
+    "parameters": "No parameters",
+    "timePeriod": "Basic period",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 14,
+    "deliveryDestination": "Kawasaki",
+    "sources": "DC Tokyo",
+    "product": "Shoes",
+    "type": "Most Inventory (Dynamic)",
+    "parameters": "No parameters",
+    "timePeriod": "Basic period",
+    "inclusionType": "Include"
+  }
+]

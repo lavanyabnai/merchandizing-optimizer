@@ -1,0 +1,8 @@
+facilityId,co2EmissionSource,co2Produced,timeUnit,productUnit,timePeriodId
+1,Electri,1,day,one,3
+1,city,2,night,two,4
+1,Electric,3,month,three,5
+1,Electro,4,year,four,6
+1,wind,5,days,five,7
+1,car,6,month,six,8
+1,van,7,weeks,seven,9

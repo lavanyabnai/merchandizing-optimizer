@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "DC Itami",
+    "type": "DC",
+    "location": "DC Itami location",
+    "initiallyOpen": true,
+    "inclusionType": "Include",
+    "capacity": 0,
+    "capacityUnit": "m³",
+    "priority": "Equal",
+    "aggregateOrdersByLocation": false,
+    "additionalParameters": "Additional parameters",
+    "icon": "red"
+  },
+  {
+    "id": 2,
+    "name": "DC Tokyo",
+    "type": "DC",
+    "location": "DC Tokyo location",
+    "initiallyOpen": true,
+    "inclusionType": "Include",
+    "capacity": 0,
+    "capacityUnit": "m³",
+    "priority": "Equal",
+    "aggregateOrdersByLocation": false,
+    "additionalParameters": "Additional parameters",
+    "icon": "red"
+  },
+  {
+    "id": 3,
+    "name": "Port Kobe",
+    "type": "DC",
+    "location": "Port Kobe location",
+    "initiallyOpen": true,
+    "inclusionType": "Include",
+    "capacity": 0,
+    "capacityUnit": "m³",
+    "priority": "Equal",
+    "aggregateOrdersByLocation": false,
+    "additionalParameters": "Additional parameters",
+    "icon": "purple"
+  },
+  {
+    "id": 4,
+    "name": "Port Vung Tau",
+    "type": "DC",
+    "location": "Port Vung Tau location",
+    "initiallyOpen": true,
+    "inclusionType": "Include",
+    "capacity": 0,
+    "capacityUnit": "m³",
+    "priority": "Equal",
+    "aggregateOrdersByLocation": false,
+    "additionalParameters": "Additional parameters",
+    "icon": "purple"
+  }
+]

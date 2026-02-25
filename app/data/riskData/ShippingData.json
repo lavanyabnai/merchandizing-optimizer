@@ -1,0 +1,14 @@
+[
+  {
+    "site": "Factory Berlin",
+    "product": "Product A",
+    "type": "Simple make policy",
+    "parameter": "Time",
+    "bom": "BOM Beer",
+    "production": "1.45",
+    "currency": "USD",
+    "co2": "0",
+    "time": "(All periods)"
+  }
+ 
+]

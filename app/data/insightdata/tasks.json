@@ -1,0 +1,110 @@
+[
+  {
+    "id": "SOR1333",
+    "title": "Brake Pad Atlanta Distribution center",
+    "status": "progress",
+    "label": "Inventory",
+    "priority": "medium",
+    "avg": {
+      "av1": "31%",
+      "av2": 20
+    },
+    "inv": "87",
+    "safe": "42",
+    "module": "2 days",
+    "progress": 20
+  },
+  {
+    "id": "SOR8484",
+    "title": "Ignition Coil Atlanta Distribution center",
+    "status": "progress",
+    "label": "Inventory",
+    "priority": "medium",
+    "avg": {
+      "av1": "21%",
+      "av2": 12
+    },
+    "inv": "950",
+    "safe": "300",
+    "module": "9 days",
+    "progress": 40
+  },
+
+  {
+    "id": "SOR3932",
+    "title": "Control Arm Atlanta Distribution center",
+    "status": "progress",
+    "label": "Inventory",
+    "priority": "medium",
+    "avg": {
+      "av1": "14%",
+      "av2": 23
+    },
+    "inv": "32",
+    "safe": "200",
+    "module": "2 days",
+    "progress": 10
+  },
+  {
+    "id": "SOR3932",
+    "title": "Radiator Atlanta Distribution center",
+    "status": "done",
+    "label": "Inventory",
+    "priority": "medium",
+    "avg": {
+      "av1": "8%",
+      "av2": 40
+    },
+
+    "inv": "340",
+    "safe": "200",
+    "module": "16 days",
+    "progress": 70
+  },
+  {
+    "id": "ESR3445",
+    "title": "Oil Filter Atlanta Distribution center",
+    "status": "done",
+    "label": "Inventory",
+    "priority": "medium",
+    "avg": {
+      "av1": "4%",
+      "av2": 50
+    },
+    "inv": "154",
+    "safe": "200",
+    "module": "22 days",
+    "progress": 45
+  },
+  {
+    "id": "SOR1632",
+    "title": "Shock Absorber Atlanta Distribution center",
+    "status": "progress",
+    "label": "Inventory",
+    "priority": "medium",
+    "avg": {
+      "av1": "3.8%",
+      "av2": 89
+    },
+    "inv": "56",
+    "safe": "200",
+    "module": "5 days",
+    "progress": 55
+  },
+
+  {
+    "id": "SOR1632",
+    "title": "Spark Plug Atlanta Distribution center",
+    "status": "progress",
+    "label": "Inventory",
+    "priority": "medium",
+    "avg": {
+      "av1": "3.8%",
+      "av2": 40
+    },
+    "inv": "40",
+    "safe": "200",
+    "module": "5 days",
+    "progress": 10
+  }
+]

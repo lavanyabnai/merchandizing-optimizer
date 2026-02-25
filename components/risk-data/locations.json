@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "code": "",
+    "name": "DC Tokyo location",
+    "city": "",
+    "region": "",
+    "country": "",
+    "address": "",
+    "latitude": 35.69,
+    "longitude": 139.692,
+    "autofillCoordinates": "Autofill coordinates"
+  },
+  {
+    "id": 2,
+    "code": "",
+    "name": "Port Kobe location",
+    "city": "",
+    "region": "",
+    "country": "",
+    "address": "",
+    "latitude": 34.692,
+    "longitude": 135.18,
+    "autofillCoordinates": "Autofill coordinates"
+  },
+  {
+    "id": 3,
+    "code": "",
+    "name": "Tokyo location",
+    "city": "Tokyo",
+    "region": "Tokyo",
+    "country": "Japan",
+    "address": "",
+    "latitude": 35.69,
+    "longitude": 139.692,
+    "autofillCoordinates": "Autofill coordinates"
+  },
+  {
+    "id": 4,
+    "code": "",
+    "name": "Yokohama location",
+    "city": "Kanagawa",
+    "region": "Kanagawa",
+    "country": "Japan",
+    "address": "",
+    "latitude": 35.433,
+    "longitude": 139.65,
+    "autofillCoordinates": "Autofill coordinates"
+  },
+  {
+    "id": 5,
+    "code": "",
+    "name": "Osaka location",
+    "city": "Osaka",
+    "region": "Osaka",
+    "country": "Japan",
+    "address": "",
+    "latitude": 34.694,
+    "longitude": 135.502,
+    "autofillCoordinates": "Autofill coordinates"
+  },
+  {
+    "id": 6,
+    "code": "",
+    "name": "Nagoya location",
+    "city": "Aichi",
+    "region": "Aichi",
+    "country": "Japan",
+    "address": "",
+    "latitude": 35.181,
+    "longitude": 136.906,
+    "autofillCoordinates": "Autofill coordinates"
+  },
+  {
+    "id": 7,
+    "code": "",
+    "name": "Kobe location",
+    "city": "Hyogo",
+    "region": "Hyogo",
+    "country": "Japan",
+    "address": "",
+    "latitude": 34.691,
+    "longitude": 135.183,
+    "autofillCoordinates": "Autofill coordinates"
+  }
+]

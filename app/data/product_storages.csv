@@ -1,0 +1,2 @@
+label,facilityId,productId,currency,timePeriodId,inclusionType,minStock
+BFP,7,22,USD,7,include,5

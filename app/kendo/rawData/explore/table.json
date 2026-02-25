@@ -1,0 +1,39 @@
+[
+
+
+  {
+    "Jan": 2800,
+    "Feb": 2800,
+    "Mar": 1000,
+    "Apr": 920,
+    "May": 780,
+    "Jun": 950,
+    "Jul": 1050,
+    "Aug": 1200,
+    "Sep": 2000,
+    "Oct": 2500,
+    "Nov": 3000,
+    "Dec": 2800,
+    "total_demand": 0,
+    "material_cost_pu": 75,
+    "inv_hold_cost_pupm": 25,
+    "stockout_cost_pupm": 50,
+    "hiring_cost_pw": 1200,
+    "firing_cost_pw": 3600,
+    "labor_hrs_pu": 4,
+    "worker_cost_pm": 2400,
+    "overtime_cost_phr": 25,
+    "outsourcing_cost_pu": 175,
+    "max_work_hrs_pwpm": 160,
+    "max_overtime_hrs_pwpm": 10,
+    "inventory_start": 500,
+    "inventory_end": 500,
+    "backlog_start": 0,
+    "backlog_end": 0,
+    "num_workers_start": 36,
+    "min_end_workers": 30,
+    "max_end_workers": 36,
+    "num_wks_pm": 4,
+    "num_hrs_pw": 40
+  }
+]

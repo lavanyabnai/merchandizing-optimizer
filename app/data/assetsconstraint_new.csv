@@ -1,0 +1,3 @@
+groupId,minDcs,maxDcs,timePeriod,inclusionType
+7,1,5,five,Include
+6,1,5,five,Include

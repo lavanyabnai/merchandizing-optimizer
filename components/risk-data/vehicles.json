@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Container",
+    "capacity": 100,
+    "capacityUnit": "m³",
+    "speed": 50,
+    "speedUnit": "km/h"
+  },
+  {
+    "id": 2,
+    "name": "Truck",
+    "capacity": 80,
+    "capacityUnit": "m³",
+    "speed": 50,
+    "speedUnit": "km/h"
+  },
+  {
+    "id": 3,
+    "name": "Van",
+    "capacity": 30,
+    "capacityUnit": "m³",
+    "speed": 60,
+    "speedUnit": "km/h"
+  },
+  {
+    "id": 4,
+    "name": "Motorcycle",
+    "capacity": 5,
+    "capacityUnit": "kg",
+    "speed": 80,
+    "speedUnit": "km/h"
+  },
+  {
+    "id": 5,
+    "name": "Ship",
+    "capacity": 5000,
+    "capacityUnit": "ton",
+    "speed": 25,
+    "speedUnit": "knots"
+  },
+  {
+    "id": 6,
+    "name": "Train",
+    "capacity": 2000,
+    "capacityUnit": "ton",
+    "speed": 120,
+    "speedUnit": "km/h"
+  },
+  {
+    "id": 7,
+    "name": "Airplane",
+    "capacity": 150,
+    "capacityUnit": "ton",
+    "speed": 900,
+    "speedUnit": "km/h"
+  },
+  {
+    "id": 8,
+    "name": "Bicycle",
+    "capacity": 20,
+    "capacityUnit": "kg",
+    "speed": 25,
+    "speedUnit": "km/h"
+  },
+  {
+    "id": 9,
+    "name": "Forklift",
+    "capacity": 3,
+    "capacityUnit": "ton",
+    "speed": 15,
+    "speedUnit": "km/h"
+  },
+  {
+    "id": 10,
+    "name": "Drone",
+    "capacity": 2,
+    "capacityUnit": "kg",
+    "speed": 45,
+    "speedUnit": "km/h"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "facility": "Factory Berlin",
+    "product": "Beer",
+    "policyType": "Order on demand",
+    "parameters": "Order on demand",
+    "initial": "0",
+    "onHandInventory": 2106,
+    "periodicCheck": "6 months",
+    "period": "10 months",
+    "firstPeriodicCheck": "2023-10-29",
+    "policyBasis": "Supply",
+    "timeUnit": "months",
+    "timePeriod": "12 months",
+    "inclusionType": "Partial"
+  },
+  {
+    "facility": "DC",
+    "product": "Beer",
+    "policyType": "Min-max-policy",
+    "parameters": "Order on demand",
+    "initial": "0",
+    "onHandInventory": 2106,
+    "periodicCheck": "6 months",
+    "period": "10 months",
+    "firstPeriodicCheck": "2023-10-29",
+    "policyBasis": "Supply",
+    "timeUnit": "months",
+    "timePeriod": "12 months",
+    "inclusionType": "Partial"
+  },
+    {
+      "facility": "Factory Berlin",
+      "product": "Beer",
+      "policyType": "Min-max-policy",
+      "parameters": "Order on demand",
+      "initial": "0",
+      "onHandInventory": 2106,
+      "periodicCheck": "6 months",
+      "period": "10 months",
+      "firstPeriodicCheck": "2023-10-29",
+      "policyBasis": "Supply",
+      "timeUnit": "months",
+      "timePeriod": "12 months",
+      "inclusionType": "Partial"
+    }
+]

@@ -1,0 +1,12 @@
+node_modules
+.next
+.git
+coverage
+playwright-report
+blob-report
+test-results
+e2e/screenshots
+assortment-optimizer-service
+assortment-optimizer-main
+*.tsbuildinfo
+.pnpm-debug.log*

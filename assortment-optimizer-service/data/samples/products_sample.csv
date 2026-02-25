@@ -1,0 +1,37 @@
+sku,name,brand,brand_tier,subcategory,size,pack_type,price,cost,width_inches,space_elasticity,flavor,price_tier,is_active
+CSD-001,Coca-Cola Classic 12pk,Coca-Cola,premium,CSD,12oz,12-pack,6.99,4.50,10.5,0.15,Original,mid,true
+CSD-002,Pepsi 12pk,Pepsi,premium,CSD,12oz,12-pack,6.99,4.50,10.5,0.15,Original,mid,true
+CSD-003,Dr Pepper 12pk,Dr Pepper,national_a,CSD,12oz,12-pack,6.49,4.20,10.5,0.12,Original,mid,true
+CSD-004,Sprite 12pk,Coca-Cola,premium,CSD,12oz,12-pack,6.99,4.50,10.5,0.15,Lemon-Lime,mid,true
+CSD-005,Mountain Dew 12pk,Pepsi,premium,CSD,12oz,12-pack,6.99,4.50,10.5,0.15,Citrus,mid,true
+CSD-006,Fanta Orange 12pk,Coca-Cola,national_a,CSD,12oz,12-pack,5.99,3.80,10.5,0.12,Orange,value,true
+CSD-007,Store Brand Cola 12pk,Store Brand,store_brand,CSD,12oz,12-pack,3.99,2.20,10.5,0.08,Original,budget,true
+CSD-008,Coca-Cola Zero 12pk,Coca-Cola,premium,CSD,12oz,12-pack,6.99,4.50,10.5,0.14,Original,mid,true
+CSD-009,Diet Pepsi 12pk,Pepsi,premium,CSD,12oz,12-pack,6.99,4.50,10.5,0.14,Original,mid,true
+CSD-010,7UP 12pk,Keurig Dr Pepper,national_a,CSD,12oz,12-pack,5.99,3.80,10.5,0.12,Lemon-Lime,value,true
+WAT-001,Dasani Water 24pk,Coca-Cola,premium,Water,16.9oz,24-pack,5.99,3.20,12.0,0.10,,mid,true
+WAT-002,Aquafina 24pk,Pepsi,premium,Water,16.9oz,24-pack,5.99,3.20,12.0,0.10,,mid,true
+WAT-003,Poland Spring 24pk,Nestle,national_a,Water,16.9oz,24-pack,4.99,2.80,12.0,0.08,,value,true
+WAT-004,Store Brand Water 24pk,Store Brand,store_brand,Water,16.9oz,24-pack,2.99,1.50,12.0,0.05,,budget,true
+WAT-005,Evian 6pk,Danone,premium,Water,1L,6-pack,8.99,5.50,8.0,0.12,,premium,true
+JUI-001,Tropicana Orange Juice,PepsiCo,premium,Juice,52oz,single,4.99,3.20,4.5,0.12,Orange,mid,true
+JUI-002,Minute Maid Orange Juice,Coca-Cola,premium,Juice,52oz,single,4.79,3.00,4.5,0.12,Orange,mid,true
+JUI-003,Simply Orange,Coca-Cola,premium,Juice,52oz,single,5.49,3.50,4.5,0.15,Orange,mid,true
+JUI-004,Store Brand OJ,Store Brand,store_brand,Juice,52oz,single,3.29,1.80,4.5,0.08,Orange,budget,true
+JUI-005,Ocean Spray Cranberry,Ocean Spray,national_a,Juice,64oz,single,4.29,2.70,4.5,0.10,Cranberry,mid,true
+ENE-001,Red Bull 4pk,Red Bull,premium,Energy,8.4oz,4-pack,9.99,6.50,5.0,0.18,,premium,true
+ENE-002,Monster Energy 4pk,Monster,premium,Energy,16oz,4-pack,8.99,5.80,6.0,0.16,,mid,true
+ENE-003,Rockstar 4pk,PepsiCo,national_a,Energy,16oz,4-pack,7.99,5.00,6.0,0.14,,mid,true
+ENE-004,5-Hour Energy 2pk,Living Essentials,premium,Energy,1.93oz,2-pack,6.99,4.20,3.0,0.12,,premium,true
+ENE-005,Store Brand Energy 4pk,Store Brand,store_brand,Energy,16oz,4-pack,5.99,3.50,6.0,0.10,,value,true
+SPD-001,Gatorade Thirst Quencher 8pk,PepsiCo,premium,Sports Drink,20oz,8-pack,9.99,6.20,11.0,0.14,Fruit Punch,mid,true
+SPD-002,Powerade 8pk,Coca-Cola,national_a,Sports Drink,20oz,8-pack,8.49,5.30,11.0,0.12,Mountain Berry,value,true
+SPD-003,Body Armor 6pk,Coca-Cola,premium,Sports Drink,16oz,6-pack,10.99,7.00,8.0,0.15,Strawberry,mid,true
+SPD-004,Store Brand Sports Drink 8pk,Store Brand,store_brand,Sports Drink,20oz,8-pack,5.99,3.20,11.0,0.08,Fruit Punch,budget,true
+TEA-001,Pure Leaf Iced Tea 6pk,PepsiCo,premium,Tea,18.5oz,6-pack,7.99,5.00,7.5,0.12,Sweet Tea,mid,true
+TEA-002,Gold Peak Tea 6pk,Coca-Cola,premium,Tea,18.5oz,6-pack,7.99,5.00,7.5,0.12,Sweet Tea,mid,true
+TEA-003,Arizona Green Tea 12pk,Arizona,national_a,Tea,16oz,12-pack,9.99,5.50,9.0,0.10,Green Tea,value,true
+TEA-004,Store Brand Iced Tea 6pk,Store Brand,store_brand,Tea,18.5oz,6-pack,4.99,2.80,7.5,0.08,Sweet Tea,budget,true
+COF-001,Starbucks Frappuccino 4pk,Starbucks,premium,RTD Coffee,9.5oz,4-pack,9.99,6.50,5.0,0.15,Mocha,premium,true
+COF-002,Dunkin Iced Coffee 4pk,Dunkin,national_a,RTD Coffee,13.7oz,4-pack,8.99,5.80,6.0,0.12,Original,mid,true
+COF-003,Store Brand Cold Brew 4pk,Store Brand,store_brand,RTD Coffee,11oz,4-pack,5.99,3.50,5.5,0.08,Original,budget,true

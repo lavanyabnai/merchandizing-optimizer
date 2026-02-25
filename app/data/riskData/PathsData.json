@@ -1,0 +1,46 @@
+[
+  {
+    "from": "Factory Berlin",
+    "to": "DC",
+    "cost": "Product & Distance",
+    "costCalculation": "0.07 Product & Distance",
+    "co2Calculation": "0",
+    "currency": "USD",
+    "distance": "0",
+    "distanceUnit": "km",
+    "transport": "0"
+  },
+  {
+    "from": "Supplier",
+    "to": "Factory Berlin",
+    "cost": "Fixed Delivery",
+    "costCalculation": "0",
+    "co2Calculation": "0",
+    "currency": "USD",
+    "distance": "0",
+    "distanceUnit": "km",
+    "transport": "0"
+  },
+   {
+     "from": "DC Berlin",
+     "to": "Customer",
+     "cost": "Product & Distance",
+     "costCalculation": "0",
+     "co2Calculation": "0",
+     "currency": "USD",
+     "distance": "0",
+     "distanceUnit": "km",
+     "transport": "0"
+   },
+     {
+       "from": "DC Spain",
+       "to": "Customer",
+       "cost": "Product & Distance",
+       "costCalculation": "0",
+       "co2Calculation": "0",
+       "currency": "USD",
+       "distance": "0",
+       "distanceUnit": "km",
+       "transport": "0"
+     }
+]

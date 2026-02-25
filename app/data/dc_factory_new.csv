@@ -1,0 +1,8 @@
+name,Type,inclusionType,capacity,capacityUnit,icon,LocationName
+BFP,Plant,Exclude,0,barrels,,BFP
+SCP,Plant,Include,99999,barrels,,SCP
+BO,DC,Include,1000,barrels,,BO
+NA,DC,Include,500,barrels,,NA
+PR,DC,Include,1000,barrels,,PR
+SP,DC,Include,500,barrels,,SP
+WO,DC,Include,1000,barrels,,WO

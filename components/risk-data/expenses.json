@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "facility": "[Japan Sites]",
+    "expenseType": "Other costs",
+    "value": 30,
+    "currency": "USD",
+    "timeUnit": "day",
+    "productUnit": "",
+    "timePeriod": "(All periods)"
+  },
+  {
+    "id": 2,
+    "facility": "Port Kobe",
+    "expenseType": "Other costs",
+    "value": 40,
+    "currency": "USD",
+    "timeUnit": "day",
+    "productUnit": "",
+    "timePeriod": "(All periods)"
+  },
+  {
+    "id": 3,
+    "facility": "Port Vung Tau",
+    "expenseType": "Other costs",
+    "value": 40,
+    "currency": "USD",
+    "timeUnit": "day",
+    "productUnit": "",
+    "timePeriod": "(All periods)"
+  },
+  {
+    "id": 4,
+    "facility": "[Japan Sites]",
+    "expenseType": "Carrying cost",
+    "value": 2,
+    "currency": "USD",
+    "timeUnit": "day",
+    "productUnit": "m³",
+    "timePeriod": "(All periods)"
+  },
+  {
+    "id": 5,
+    "facility": "Port Kobe",
+    "expenseType": "Carrying cost",
+    "value": 7,
+    "currency": "USD",
+    "timeUnit": "day",
+    "productUnit": "m³",
+    "timePeriod": "(All periods)"
+  },
+  {
+    "id": 6,
+    "facility": "Port Vung Tau",
+    "expenseType": "Carrying cost",
+    "value": 7,
+    "currency": "USD",
+    "timeUnit": "day",
+    "productUnit": "m³",
+    "timePeriod": "(All periods)"
+  },
+  {
+    "id": 7,
+    "facility": "[Japan Sites]",
+    "expenseType": "Facility cost",
+    "value": 3,
+    "currency": "USD",
+    "timeUnit": "day",
+    "productUnit": "m³",
+    "timePeriod": "(All periods)"
+  }
+]

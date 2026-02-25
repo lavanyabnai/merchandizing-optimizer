@@ -1,0 +1,1 @@
+export type MarkerType = 'arrow' | 'arrowclosed'; 

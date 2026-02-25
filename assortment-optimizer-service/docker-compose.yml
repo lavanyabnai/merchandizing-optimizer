@@ -1,0 +1,131 @@
+version: '3.8'
+
+services:
+  # ===========================================
+  # Assortment Optimizer API
+  # ===========================================
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: assortment-optimizer-api
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=development
+      - DEBUG=true
+      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@postgres:5432/assortment_optimizer
+      - REDIS_URL=redis://redis:6379/0
+      - CORS_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+      - LOG_LEVEL=DEBUG
+      - LOG_FORMAT=text
+    volumes:
+      - ./app:/app/app:ro
+      - ./tests:/app/tests:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - assortment-network
+    restart: unless-stopped
+
+  # ===========================================
+  # PostgreSQL Database
+  # ===========================================
+  postgres:
+    image: postgres:16-alpine
+    container_name: assortment-optimizer-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=assortment_optimizer
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d assortment_optimizer"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - assortment-network
+    restart: unless-stopped
+
+  # ===========================================
+  # Redis Cache
+  # ===========================================
+  redis:
+    image: redis:7-alpine
+    container_name: assortment-optimizer-redis
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    networks:
+      - assortment-network
+    restart: unless-stopped
+
+  # ===========================================
+  # pgAdmin (Optional - Database Management)
+  # ===========================================
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: assortment-optimizer-pgadmin
+    ports:
+      - "5050:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@example.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+      - PGADMIN_CONFIG_SERVER_MODE=False
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+    networks:
+      - assortment-network
+    profiles:
+      - tools
+    restart: unless-stopped
+
+  # ===========================================
+  # Redis Commander (Optional - Redis GUI)
+  # ===========================================
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: assortment-optimizer-redis-commander
+    ports:
+      - "8081:8081"
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    depends_on:
+      - redis
+    networks:
+      - assortment-network
+    profiles:
+      - tools
+    restart: unless-stopped
+
+networks:
+  assortment-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  pgadmin_data:
+    driver: local

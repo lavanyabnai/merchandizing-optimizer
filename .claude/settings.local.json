@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm test:run:*)",
+      "Bash(node -e:*)",
+      "Bash(npx playwright install:*)",
+      "Bash(pnpm test:coverage:*)",
+      "Bash(pnpm exec playwright test:*)",
+      "Bash(.venvScriptsActivate.ps1)",
+      "Bash(cd:*)",
+      "Bash(test:*)",
+      "Bash(find:*)",
+      "Bash(pnpm update:*)"
+    ]
+  }
+}

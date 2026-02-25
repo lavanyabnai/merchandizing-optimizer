@@ -1,0 +1,2 @@
+customerId,productId,demandType,timePeriodId,currency,inclusionType
+8,21,Periodic demand,2,USD,Include

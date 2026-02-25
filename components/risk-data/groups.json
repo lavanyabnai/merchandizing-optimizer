@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "name": "Japan Sites",
+    "description": "",
+    "customers": [],
+    "sites": ["DC Itami", "DC Tokyo"],
+    "suppliers": [],
+    "groups": []
+  },
+  {
+    "id": 2,
+    "name": "Customers",
+    "description": "",
+    "customers": [
+      "Tokyo",
+      "Yokohama",
+      "Osaka",
+      "Nagoya",
+      "Kobe",
+      "Kyoto",
+      "Fukuoka",
+      "Kawasaki",
+      "Saitama",
+      "Hiroshima"
+    ],
+    "sites": [],
+    "suppliers": [],
+    "groups": []
+  }
+]
