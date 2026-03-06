@@ -1,4 +1,3 @@
-import { clerkMiddleware, getAuth } from '@hono/clerk-auth';
 import { zValidator } from '@hono/zod-validator';
 import { eq, inArray } from 'drizzle-orm';
 import { Hono } from 'hono';
@@ -17,12 +16,7 @@ const patchlinearrangeSchema = z.object({
 });
 
 const app = new Hono()
-  .get('/', clerkMiddleware(), async (c) => {
-    const auth = getAuth(c);
-
-    if (!auth?.userId) {
-      return c.json({ error: 'Unauthorized' }, 401);
-    }
+  .get('/', async (c) => {
 
     try {
       const data = await db
@@ -52,14 +46,8 @@ const app = new Hono()
         id: z.string()
       })
     ),
-    clerkMiddleware(),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       try {
         const [data] = await db
@@ -81,16 +69,10 @@ const app = new Hono()
   )
   .post(
     '/',
-    clerkMiddleware(),
     zValidator('json', insertObjectiveMemberSchema),
     async (c) => {
       try {
-        const auth = getAuth(c);
         const values = c.req.valid('json');
-
-        if (!auth?.userId) {
-          return c.json({ error: 'Unauthorized' }, 401);
-        }
 
         console.log('Received values:', JSON.stringify(values, null, 2));
 
@@ -120,7 +102,6 @@ const app = new Hono()
   )
   .post(
     '/bulk-delete',
-    clerkMiddleware(),
     zValidator(
       'json',
       z.object({
@@ -128,12 +109,7 @@ const app = new Hono()
       })
     ),
     async (c) => {
-      const auth = getAuth(c);
       const { ids } = c.req.valid('json');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       try {
         const data = await db
@@ -150,7 +126,6 @@ const app = new Hono()
   )
   .delete(
     '/:id',
-    clerkMiddleware(),
     zValidator(
       'param',
       z.object({
@@ -158,12 +133,7 @@ const app = new Hono()
       })
     ),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       try {
         const [data] = await db
@@ -184,16 +154,10 @@ const app = new Hono()
   )
   .post(
     '/bulk-create',
-    clerkMiddleware(),
     zValidator('json', z.array(insertObjectiveMemberSchema.omit({ id: true }))),
     async (c) => {
-      const auth = getAuth(c);
       const values = c.req.valid('json');
       console.log('Received bulk create values:', values); // Log the incoming values
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
       try {
         await db.delete(objectiveMembers);
         const data = await db
@@ -216,7 +180,6 @@ const app = new Hono()
   )
   .patch(
     '/:id',
-    clerkMiddleware(),
     zValidator(
       'param',
       z.object({
@@ -226,13 +189,8 @@ const app = new Hono()
     zValidator('json', patchlinearrangeSchema),
     async (c) => {
       try {
-        const auth = getAuth(c);
         const { id } = c.req.valid('param');
         const values = c.req.valid('json');
-
-        if (!auth?.userId) {
-          throw new Error('Unauthorized');
-        }
 
         console.log('PATCH request values:', values); // Log the incoming values
 

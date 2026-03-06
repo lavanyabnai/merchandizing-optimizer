@@ -430,7 +430,7 @@ Working in: d:/merchandizing-optimizer/assortment-optimizer-service/
    - tests/conftest.py:
      - pytest fixtures for test database (use testcontainers or sqlite)
      - Test client fixture (httpx AsyncClient)
-     - Auth token fixture (mock Clerk JWT)
+     - Auth token fixture (mock JWT)
      - Sample data fixtures (products, stores, sales)
    - Install: pytest, pytest-asyncio, httpx, testcontainers, factory-boy
 
@@ -478,7 +478,7 @@ Working in: d:/merchandizing-optimizer/assortment-optimizer-service/
    - test_pca_coordinates_returned()
 
 7. Create tests/integration/test_auth_flow.py:
-   - test_valid_clerk_token_passes()
+   - test_valid_token_passes()
    - test_expired_token_returns_401()
    - test_invalid_signature_returns_401()
    - test_missing_token_returns_401()

@@ -78,7 +78,7 @@ export const uploadStatusEnum = pgEnum('upload_status', [
 // Main upload history table
 export const uploadHistory = pgTable('upload_history', {
   id: uuid('id').defaultRandom().primaryKey(),
-  userId: text('user_id').notNull(), // From Clerk auth
+  userId: text('user_id').notNull(), // From auth
   fileName: text('file_name').notNull(),
   fileSize: integer('file_size').notNull(), // in bytes
   fileType: text('file_type').notNull(), // csv, xlsx, json
@@ -157,7 +157,7 @@ export const customers = pgTable('customers', {
 // app/api/upload/route.ts
 
 import { NextRequest, NextResponse } from 'next/server';
-import { auth } from '@clerk/nextjs';
+import { auth } from '@/lib/auth';
 import { db } from '@/db/drizzle';
 import { uploadHistory, uploadStaging } from '@/db/schema';
 
@@ -1040,9 +1040,6 @@ ALLOWED_FILE_TYPES="csv,xlsx,json"
 UPLOAD_RATE_LIMIT_HOUR=10
 UPLOAD_RATE_LIMIT_DAY=50
 
-# Clerk Authentication
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_***
-CLERK_SECRET_KEY=sk_***
 ```
 
 ---

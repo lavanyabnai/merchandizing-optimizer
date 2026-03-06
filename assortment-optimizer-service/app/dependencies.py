@@ -30,8 +30,8 @@ async def get_current_user(
 ) -> dict:
     """Extract and validate the current user from request headers.
 
-    This is a placeholder that will be replaced with actual Clerk JWT
-    validation in Session 3.
+    This is a placeholder that will be replaced with actual JWT
+    validation.
 
     Args:
         authorization: Bearer token from Authorization header.
@@ -64,7 +64,7 @@ async def get_current_user(
 
     token = authorization.replace("Bearer ", "")
 
-    # TODO: Implement actual Clerk JWT validation in Session 3
+    # TODO: Implement actual JWT validation
     # For now, just check that a token exists
     if not token:
         raise HTTPException(

@@ -18,9 +18,8 @@ os.environ["ENVIRONMENT"] = "test"
 os.environ["DEBUG"] = "false"
 os.environ["DATABASE_URL"] = "sqlite+aiosqlite:///:memory:"
 os.environ["REDIS_URL"] = "redis://localhost:6379/1"
-os.environ["CLERK_SECRET_KEY"] = "test_secret_key_for_testing"
-os.environ["CLERK_PUBLISHABLE_KEY"] = "pk_test_key"
-os.environ["CLERK_JWKS_URL"] = "https://test.clerk.com/.well-known/jwks.json"
+os.environ["JWT_SECRET_KEY"] = "test_secret_key_for_testing"
+os.environ["JWT_JWKS_URL"] = "https://test.example.com/.well-known/jwks.json"
 os.environ["CORS_ORIGINS"] = "http://localhost:3000"
 
 # Now import app modules
@@ -376,7 +375,7 @@ def mock_jwt_payload() -> dict[str, Any]:
         "sub": "user_test123",
         "iat": int(now.timestamp()),
         "exp": int(now.timestamp()) + 3600,
-        "iss": "https://test.clerk.com",
+        "iss": "https://test.example.com",
         "azp": "test_client_id",
     }
 

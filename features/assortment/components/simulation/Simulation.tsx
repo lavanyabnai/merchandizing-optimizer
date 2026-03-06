@@ -217,12 +217,21 @@ interface SimulationProps {
 
 type ResultTab = "distribution" | "summary" | "compare";
 
+function getDefaultSimulationResult(): SimulationResult {
+  return generateDemoSimulationResult(
+    "remove_sku",
+    "Remove Coca-Cola 12oz Can (Sample Scenario)"
+  );
+}
+
 export function Simulation({ useDemoData = true }: SimulationProps) {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [selectedScenario, setSelectedScenario] =
     useState<ScenarioType>("remove_sku");
   const [config, setConfig] = useState<SimulationConfigType>(DEFAULT_CONFIG);
-  const [result, setResult] = useState<SimulationResult | null>(null);
+  const [result, setResult] = useState<SimulationResult | null>(() =>
+    useDemoData ? getDefaultSimulationResult() : null
+  );
   const [savedScenarios, setSavedScenarios] = useState<SavedScenario[]>([]);
   const [resultTab, setResultTab] = useState<ResultTab>("distribution");
   const [isSimulating, setIsSimulating] = useState(false);
@@ -618,9 +627,9 @@ export function Simulation({ useDemoData = true }: SimulationProps) {
       />
 
       {/* Main Layout */}
-      <div className="grid gap-6 lg:grid-cols-5">
+      <div className="grid gap-6 grid-cols-[1fr_2fr] w-full">
         {/* Left Panel: Configuration */}
-        <div className="lg:col-span-2 space-y-4">
+        <div className="space-y-4">
           {/* Scenario Form */}
           {renderScenarioForm()}
 
@@ -672,8 +681,8 @@ export function Simulation({ useDemoData = true }: SimulationProps) {
           )}
         </div>
 
-        {/* Right Panel: Results */}
-        <div className="lg:col-span-3 space-y-4">
+        {/* Results */}
+        <div className="space-y-4 w-full">
           {result ? (
             <>
               {/* Result Tabs */}

@@ -109,9 +109,22 @@ interface ClusteringProps {
   useDemoData?: boolean;
 }
 
+// Generate a default result to show on initial load
+const DEFAULT_CLUSTER_CONFIG: ClusterConfigValues = {
+  method: "kmeans",
+  nClusters: 4,
+  features: ["revenue", "traffic", "premiumShare"],
+};
+
+function getDefaultClusterResult(): ClusteringResult {
+  return generateDemoResult(DEFAULT_CLUSTER_CONFIG);
+}
+
 export function Clustering({ useDemoData = true }: ClusteringProps) {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
-  const [result, setResult] = useState<ClusteringResult | null>(null);
+  const [result, setResult] = useState<ClusteringResult | null>(() =>
+    useDemoData ? getDefaultClusterResult() : null
+  );
   const [isRunning, setIsRunning] = useState(false);
 
   const runClusteringMutation = useRunClustering();
@@ -198,9 +211,9 @@ export function Clustering({ useDemoData = true }: ClusteringProps) {
       </div>
 
       {/* Main Layout */}
-      <div className="grid gap-6 lg:grid-cols-4">
+      <div className="grid gap-6 grid-cols-[1fr_2fr] w-full">
         {/* Left Panel: Configuration */}
-        <div className="lg:col-span-1">
+        <div>
           <ClusterConfig
             onRunClustering={handleRunClustering}
             isRunning={isRunning}
@@ -208,7 +221,8 @@ export function Clustering({ useDemoData = true }: ClusteringProps) {
         </div>
 
         {/* Right Panel: Results */}
-        <div className="lg:col-span-3 space-y-6">
+        {/* Right Panel: Results */}
+        <div className="space-y-6 w-full">
           {result ? (
             <>
               {/* Two-column layout: Scatter + Profiles */}

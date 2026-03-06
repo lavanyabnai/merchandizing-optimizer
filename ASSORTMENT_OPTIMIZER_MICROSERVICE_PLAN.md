@@ -42,7 +42,7 @@ This document outlines a comprehensive plan to convert the Streamlit-based Assor
 │                              ▼                                      │
 │  ┌─────────────────────────────────────────────────────────────┐   │
 │  │  API Gateway (/api/assortment/*)                            │   │
-│  │  - Authentication (Clerk)                                   │   │
+│  │  - Authentication                                           │   │
 │  │  - Request routing                                          │   │
 │  │  - Response formatting                                      │   │
 │  └─────────────────────────────────────────────────────────────┘   │
@@ -276,29 +276,27 @@ This document outlines a comprehensive plan to convert the Streamlit-based Assor
 **Complexity:** High | **Recommended Model:** Opus 4.5
 
 #### Objectives:
-- Integrate with Clerk authentication
+- Integrate authentication
 - Set up API gateway in parent app
 - Configure secure communication
 - Implement rate limiting
 
 #### Tasks:
-1. Clerk JWT validation in FastAPI:
+1. JWT validation in FastAPI:
    ```python
    from fastapi import Depends, HTTPException, Security
    from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
    import jwt
-   from clerk_backend_api import Clerk
 
    security = HTTPBearer()
 
-   async def verify_clerk_token(
+   async def verify_token(
        credentials: HTTPAuthorizationCredentials = Security(security)
    ) -> dict:
-       """Verify Clerk JWT token and return user claims."""
+       """Verify JWT token and return user claims."""
        token = credentials.credentials
        try:
-           # Verify with Clerk's JWKS
-           payload = clerk.verify_token(token)
+           payload = jwt.decode(token, options={"verify_signature": True})
            return payload
        except Exception as e:
            raise HTTPException(status_code=401, detail="Invalid token")
@@ -308,12 +306,10 @@ This document outlines a comprehensive plan to convert the Streamlit-based Assor
    ```typescript
    // app/api/[[...route]]/assortment.ts
    import { Hono } from 'hono'
-   import { clerkMiddleware, getAuth } from '@hono/clerk-auth'
 
    const app = new Hono()
-     .use('*', clerkMiddleware())
      .all('/*', async (c) => {
-       const auth = getAuth(c)
+       const auth = c.get('auth')
        if (!auth?.userId) {
          return c.json({ error: 'Unauthorized' }, 401)
        }
@@ -343,14 +339,14 @@ This document outlines a comprehensive plan to convert the Streamlit-based Assor
 5. Set up request logging and tracing
 
 #### Deliverables:
-- [ ] Clerk JWT validation in FastAPI
+- [ ] JWT validation in FastAPI
 - [ ] API gateway routes in parent app
 - [ ] Rate limiting configuration
 - [ ] Request logging
 - [ ] Service communication security
 
 #### Testing:
-- Valid Clerk tokens pass validation
+- Valid tokens pass validation
 - Invalid tokens return 401
 - Rate limiting triggers correctly
 - Requests are properly logged
@@ -1413,7 +1409,6 @@ This document outlines a comprehensive plan to convert the Streamlit-based Assor
 - [ ] Docker Desktop installed
 - [ ] PostgreSQL access (Neon or local)
 - [ ] Redis instance (local or cloud)
-- [ ] Clerk account configured
 - [ ] Node.js 18+ for frontend
 
 ### Environment Variables Required:
@@ -1421,9 +1416,6 @@ This document outlines a comprehensive plan to convert the Streamlit-based Assor
 # Microservice
 DATABASE_URL=postgresql://...
 REDIS_URL=redis://...
-CLERK_SECRET_KEY=sk_...
-CLERK_PUBLISHABLE_KEY=pk_...
-
 # Parent App (additional)
 ASSORTMENT_SERVICE_URL=http://localhost:8000
 ```

@@ -1,4 +1,3 @@
-import { clerkMiddleware, getAuth } from '@hono/clerk-auth';
 import { zValidator } from '@hono/zod-validator';
 import { eq } from 'drizzle-orm';
 import { Hono } from 'hono';
@@ -10,12 +9,7 @@ import { demandCoverageByDistances } from '@/db/schema';
 
 const app = new Hono()
   
-  .get('/', clerkMiddleware(), async (c) => {
-    const auth = getAuth(c);
-
-    if (!auth?.userId) {
-      return c.json({ error: 'Unauthorized' }, 401);
-    }
+  .get('/', async (c) => {
 
     const data = await db
       .select({
@@ -39,14 +33,8 @@ const app = new Hono()
         id: z.string()
       })
     ),
-    clerkMiddleware(),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       const [data] = await db
         .select()
@@ -62,8 +50,7 @@ const app = new Hono()
   )
   // .post(
   //   '/',
-  //   clerkMiddleware(),
-  //   zValidator(
+  //   //   zValidator(
   //     'json',
   //     z.object({
   //       name: z.string(),
@@ -79,7 +66,7 @@ const app = new Hono()
   //     })
   //   ),
   //   async (c) => {
-  //     const auth = getAuth(c);
+  //
   //     const values = c.req.valid('json');
       
 
@@ -94,15 +81,14 @@ const app = new Hono()
   // )
   // .post(
   //   '/bulk-delete',
-  //   clerkMiddleware(),
-  //   zValidator(
+  //   //   zValidator(
   //     'json',
   //     z.object({
   //       ids: z.array(z.number())
   //     })
   //   ),
   //   async (c) => {
-  //     const auth = getAuth(c);
+  //
   //     const { ids } = c.req.valid('json');
 
   //     if (!auth?.userId) {
@@ -124,15 +110,14 @@ const app = new Hono()
   // )
   // .delete(
   //   '/:id',
-  //   clerkMiddleware(),
-  //   zValidator(
+  //   //   zValidator(
   //     'param',
   //     z.object({
   //       id: z.string()
   //     })
   //   ),
   //   async (c) => {
-  //     const auth = getAuth(c);
+  //
   //     const { id } = c.req.valid('param');
 
   //     if (!auth?.userId) {
@@ -153,8 +138,7 @@ const app = new Hono()
   // )
   // .post(
   //   '/bulk-create',
-  //   clerkMiddleware(),
-  //   zValidator(
+  //   //   zValidator(
   //     'json',
   //     z.array(
   //       insertLocationSchema.omit({
@@ -163,7 +147,7 @@ const app = new Hono()
   //     )
   //   ),
   //   async (c) => {
-  //     const auth = getAuth(c);
+  //
   //     const values = c.req.valid('json');
       
   //     if (!auth?.userId) {
@@ -178,8 +162,7 @@ const app = new Hono()
 
   // .patch(
   //   '/:id',
-  //   clerkMiddleware(),
-  //   zValidator(
+  //   //   zValidator(
   //     'param',
   //     z.object({
   //       id: z.string()
@@ -187,7 +170,7 @@ const app = new Hono()
   //   ),
   //   zValidator('json', patchLocationSchema),
   //   async (c) => {
-  //     const auth = getAuth(c);
+  //
   //     const { id } = c.req.valid('param');
   //     const values = c.req.valid('json');
 

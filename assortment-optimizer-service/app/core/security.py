@@ -1,4 +1,4 @@
-"""Security utilities for JWT verification with Clerk."""
+"""Security utilities for JWT verification."""
 
 import time
 from dataclasses import dataclass
@@ -34,8 +34,8 @@ class JWKSCache:
 _jwks_cache = JWKSCache()
 
 
-class ClerkJWTError(Exception):
-    """Base exception for Clerk JWT errors."""
+class JWTError(Exception):
+    """Base exception for JWT errors."""
 
     def __init__(self, message: str, code: str = "JWT_ERROR"):
         self.message = message
@@ -43,28 +43,28 @@ class ClerkJWTError(Exception):
         super().__init__(message)
 
 
-class TokenMissingError(ClerkJWTError):
+class TokenMissingError(JWTError):
     """Raised when no token is provided."""
 
     def __init__(self, message: str = "Authorization token is required"):
         super().__init__(message, "TOKEN_MISSING")
 
 
-class TokenExpiredError(ClerkJWTError):
+class TokenExpiredError(JWTError):
     """Raised when token has expired."""
 
     def __init__(self, message: str = "Token has expired"):
         super().__init__(message, "TOKEN_EXPIRED")
 
 
-class TokenInvalidError(ClerkJWTError):
+class TokenInvalidError(JWTError):
     """Raised when token is invalid."""
 
     def __init__(self, message: str = "Invalid token"):
         super().__init__(message, "TOKEN_INVALID")
 
 
-class SignatureVerificationError(ClerkJWTError):
+class SignatureVerificationError(JWTError):
     """Raised when token signature is invalid."""
 
     def __init__(self, message: str = "Invalid token signature"):
@@ -72,7 +72,7 @@ class SignatureVerificationError(ClerkJWTError):
 
 
 async def fetch_jwks(force_refresh: bool = False) -> dict[str, Any]:
-    """Fetch JWKS from Clerk's endpoint with caching.
+    """Fetch JWKS from the configured endpoint with caching.
 
     Args:
         force_refresh: Force refresh even if cache is valid.
@@ -81,7 +81,7 @@ async def fetch_jwks(force_refresh: bool = False) -> dict[str, Any]:
         JWKS keys dictionary.
 
     Raises:
-        ClerkJWTError: If JWKS cannot be fetched.
+        JWTError: If JWKS cannot be fetched.
     """
     global _jwks_cache
     settings = get_settings()
@@ -98,7 +98,7 @@ async def fetch_jwks(force_refresh: bool = False) -> dict[str, Any]:
     try:
         async with httpx.AsyncClient() as client:
             response = await client.get(
-                settings.clerk_jwks_url,
+                settings.jwt_jwks_url,
                 timeout=10.0,
             )
             response.raise_for_status()
@@ -116,18 +116,18 @@ async def fetch_jwks(force_refresh: bool = False) -> dict[str, Any]:
         if _jwks_cache.keys is not None:
             logger.warning("Using expired JWKS cache due to fetch failure")
             return _jwks_cache.keys
-        raise ClerkJWTError(f"Failed to fetch JWKS: {str(e)}")
+        raise JWTError(f"Failed to fetch JWKS: {str(e)}")
 
 
 def get_jwk_client() -> PyJWKClient:
-    """Get a PyJWKClient for Clerk's JWKS endpoint.
+    """Get a PyJWKClient for the configured JWKS endpoint.
 
     Returns:
         Configured PyJWKClient instance.
     """
     settings = get_settings()
     return PyJWKClient(
-        settings.clerk_jwks_url,
+        settings.jwt_jwks_url,
         cache_keys=True,
         lifespan=3600,  # Cache for 1 hour
     )
@@ -135,7 +135,7 @@ def get_jwk_client() -> PyJWKClient:
 
 @dataclass
 class TokenClaims:
-    """Decoded JWT claims from Clerk token."""
+    """Decoded JWT claims."""
 
     user_id: str
     session_id: str | None = None
@@ -161,7 +161,7 @@ class TokenClaims:
         Returns:
             TokenClaims instance.
         """
-        # Clerk uses 'sub' for user_id
+        # Standard JWT 'sub' claim for user_id
         user_id = payload.get("sub", "")
 
         # Session ID is in 'sid'
@@ -177,7 +177,7 @@ class TokenClaims:
         full_name = payload.get("name") or payload.get("full_name")
         image_url = payload.get("image_url") or payload.get("picture")
 
-        # Organization claims (if using Clerk organizations)
+        # Organization claims
         org_id = payload.get("org_id")
         org_role = payload.get("org_role")
 
@@ -218,7 +218,7 @@ class TokenClaims:
 
 
 def verify_token(token: str) -> TokenClaims:
-    """Verify a Clerk JWT token and extract claims.
+    """Verify a JWT token and extract claims.
 
     Args:
         token: JWT token string (without 'Bearer ' prefix).
@@ -351,7 +351,7 @@ def extract_user_id_from_header(
         try:
             claims = verify_token_from_header(authorization)
             return claims.user_id
-        except ClerkJWTError:
+        except JWTError:
             pass
 
     return None

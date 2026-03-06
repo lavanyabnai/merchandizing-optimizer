@@ -216,7 +216,7 @@ curl -s https://api.example.com/health | jq .
 |----------|-------------|---------|
 | `DATABASE_URL` | PostgreSQL connection string | `postgresql+asyncpg://user:pass@host:5432/db` |
 | `REDIS_URL` | Redis connection string | `redis://host:6379/0` |
-| `CLERK_SECRET_KEY` | Clerk authentication secret | `sk_live_...` |
+| `JWT_SECRET_KEY` | JWT authentication secret key | `your-secret-key` |
 | `ENVIRONMENT` | Environment name | `production` |
 
 ### Optional Variables

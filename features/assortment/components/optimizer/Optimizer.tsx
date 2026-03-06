@@ -155,12 +155,18 @@ interface OptimizerProps {
 
 type ResultTab = "comparison" | "space" | "history";
 
+function getDefaultOptimizationResult(): OptimizationResult {
+  return generateDemoResult();
+}
+
 export function Optimizer({ useDemoData = true }: OptimizerProps) {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [constraints, setConstraints] = useState<ConstraintFormValues | null>(null);
   const [mustCarryIds, setMustCarryIds] = useState<string[]>([]);
   const [excludeIds, setExcludeIds] = useState<string[]>([]);
-  const [result, setResult] = useState<OptimizationResult | null>(null);
+  const [result, setResult] = useState<OptimizationResult | null>(() =>
+    useDemoData ? getDefaultOptimizationResult() : null
+  );
   const [history, setHistory] = useState<OptimizationSummary[]>(useDemoData ? generateDemoHistory() : []);
   const [resultTab, setResultTab] = useState<ResultTab>("comparison");
   const [isOptimizing, setIsOptimizing] = useState(false);
@@ -323,9 +329,9 @@ export function Optimizer({ useDemoData = true }: OptimizerProps) {
       </div>
 
       {/* Main Layout */}
-      <div className="grid gap-6 lg:grid-cols-5">
+      <div className="grid gap-6 grid-cols-[1fr_2fr] w-full">
         {/* Left Panel: Configuration */}
-        <div className="lg:col-span-2 space-y-4">
+        <div className="space-y-4">
           {/* Constraint Form */}
           <ConstraintForm
             onValuesChange={setConstraints}
@@ -383,8 +389,8 @@ export function Optimizer({ useDemoData = true }: OptimizerProps) {
           )}
         </div>
 
-        {/* Right Panel: Results */}
-        <div className="lg:col-span-3 space-y-4">
+        {/* Results */}
+        <div className="space-y-4 w-full">
           {result ? (
             <>
               {/* Profit Lift Card */}

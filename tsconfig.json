@@ -1,14 +1,19 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "types": ["node"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "types": [
+      "node"
+    ],
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "allowJs": true,
     "skipLibCheck": true,
-    
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -16,20 +21,31 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
-  
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts","**/*.md", "**/*.tsx", ".next/types/**/*.ts", "app/blue/components/Button.tsx", "app/blue/layout.tsx", "app/blue/lib/sections.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.md",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/blue/components/Button.tsx",
+    "app/blue/layout.tsx",
+    "app/blue/lib/sections.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
-
-

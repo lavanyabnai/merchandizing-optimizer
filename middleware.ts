@@ -1,13 +1,9 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
-
-const isProtectedRoute = createRouteMatcher(['/']);
-
-export default clerkMiddleware(async (auth, request) => {
-  if (isProtectedRoute(request)) {
-    await auth.protect();
-  }
-});
+export function middleware(request: NextRequest) {
+  return NextResponse.next();
+}
 
 export const config = {
   matcher: [
@@ -17,13 +13,3 @@ export const config = {
     '/(api|trpc)(.*)'
   ]
 };
-
-// import NextAuth from 'next-auth';
-
-// import { authConfig } from '@/app/(auth)/auth.config';
-
-// export default NextAuth(authConfig).auth;
-
-// export const config = {
-//   matcher: ['/', '/:id', '/api/:path*', '/login', '/register']
-// };

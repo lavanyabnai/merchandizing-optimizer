@@ -93,15 +93,15 @@ Add proper indexes on foreign keys and frequently queried columns.
 **Model:** Opus 4.5
 
 ```
-I need to integrate Clerk authentication between the parent Next.js app and the FastAPI microservice.
+I need to integrate authentication between the parent Next.js app and the FastAPI microservice.
 
 PART 1 - FastAPI (d:/merchandizing-optimizer/assortment-optimizer-service/):
 
 1. Install: pyjwt, cryptography, httpx
 
 2. Create app/core/security.py:
-   - Function to fetch Clerk's JWKS from https://api.clerk.com/v1/jwks
-   - JWT token verification using Clerk's public keys
+   - Function to fetch JWKS
+   - JWT token verification using public keys
    - Extract user_id and session claims from token
    - Cache JWKS with TTL (refresh every hour)
 
@@ -117,9 +117,9 @@ PART 2 - Parent App (d:/merchandizing-optimizer/):
 
 5. Create app/api/[[...route]]/assortment.ts:
    - Hono routes that proxy to the microservice
-   - Use clerkMiddleware() for auth
+   - Use auth middleware
    - Forward Authorization header to microservice
-   - Add X-User-Id header from Clerk session
+   - Add X-User-Id header from auth session
    - Handle all HTTP methods (GET, POST, PATCH, DELETE)
    - Proper error handling and response forwarding
 
@@ -242,6 +242,6 @@ Ensure numerical accuracy matches the original implementation.
 |---------|-------|------------------|
 | 1 | Sonnet 4.5 | FastAPI skeleton + Docker |
 | 2 | Sonnet 4.5 | Database schema + migrations |
-| 3 | Opus 4.5 | Clerk auth integration |
+| 3 | Opus 4.5 | Auth integration |
 | 4 | Sonnet 4.5 | Data generator service |
 | 5 | Opus 4.5 | MNL demand model service |

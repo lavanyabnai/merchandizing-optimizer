@@ -1,4 +1,3 @@
-import { clerkMiddleware, getAuth } from '@hono/clerk-auth';
 import { zValidator } from '@hono/zod-validator';
 import { and, desc, eq, inArray, sql } from 'drizzle-orm';
 import { Hono } from 'hono';
@@ -34,14 +33,8 @@ const app = new Hono()
         
       })
     ),
-    clerkMiddleware(),
     async (c) => {
-      const auth = getAuth(c);
       const { facilityId, vehicleTypes } = c.req.valid('query');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       const data = await db
         .select({
@@ -77,14 +70,8 @@ const app = new Hono()
         id: z.string()
       })
     ),
-    clerkMiddleware(),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       const [data] = await db
         .select()
@@ -100,16 +87,10 @@ const app = new Hono()
   )
   .post(
     '/',
-    clerkMiddleware(),
     zValidator('json', insertLoadingUnloadingGatesSchema),
     async (c) => {
       try {
-        const auth = getAuth(c);
         const values = c.req.valid('json');
-
-        if (!auth?.userId) {
-          return c.json({ error: 'Unauthorized' }, 401);
-        }
 
         console.log('Inserting values:', JSON.stringify(values, null, 2));
 
@@ -155,15 +136,9 @@ const app = new Hono()
   )
   .post(
     '/bulk-create',
-    clerkMiddleware(),
     zValidator('json', z.array(insertLoadingUnloadingGatesSchema.omit({ id: true }))),
     async (c) => {
-      const auth = getAuth(c);
       const values = c.req.valid('json');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
         await db.delete(loadingUnloadingGates);
       const data = await db.insert(loadingUnloadingGates).values(values).returning();
 
@@ -172,7 +147,6 @@ const app = new Hono()
   )
   .post(
     '/bulk-delete',
-    clerkMiddleware(),
     zValidator(
       'json',
       z.object({
@@ -180,12 +154,7 @@ const app = new Hono()
       })
     ),
     async (c) => {
-      const auth = getAuth(c);
       const { ids } = c.req.valid('json'); // Destructure ids directly
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       try {
         const data = await db
@@ -202,7 +171,6 @@ const app = new Hono()
   )
   .patch(
     '/:id',
-    clerkMiddleware(),
     zValidator(
       'param',
       z.object({
@@ -212,16 +180,11 @@ const app = new Hono()
     zValidator('json', patchloadingunloadinggatessSchema),
     async (c) => {
       try {
-        const auth = getAuth(c);
         const { id } = c.req.valid('param');
         const values = c.req.valid('json');
 
         if (!id) {
           return c.json({ error: 'Missing id' }, 400);
-        }
-
-        if (!auth?.userId) {
-          return c.json({ error: 'Unauthorized' }, 401);
         }
 
         // Remove undefined values from the update
@@ -252,7 +215,6 @@ const app = new Hono()
   )
   .delete(
     '/:id',
-    clerkMiddleware(),
     zValidator(
       'param',
       z.object({
@@ -260,15 +222,10 @@ const app = new Hono()
       })
     ),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
 
       if (!id) {
         return c.json({ error: 'Missing id' }, 400);
-      }
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
       }
 
       const [data] = await db

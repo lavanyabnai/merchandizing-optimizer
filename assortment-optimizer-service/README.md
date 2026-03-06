@@ -15,7 +15,7 @@ A FastAPI-based microservice for retail assortment optimization using Multinomia
 - **Framework**: FastAPI 0.109+
 - **Database**: PostgreSQL 16 with SQLAlchemy 2.0
 - **Cache**: Redis 7
-- **Authentication**: Clerk JWT validation
+- **Authentication**: JWT validation
 - **Scientific Computing**: NumPy, Pandas, scikit-learn, SciPy
 
 ## Quick Start
@@ -188,7 +188,7 @@ All configuration is done via environment variables. See `.env.example` for avai
 | `ENVIRONMENT` | Environment name | `development` |
 | `DATABASE_URL` | PostgreSQL connection URL | - |
 | `REDIS_URL` | Redis connection URL | - |
-| `CLERK_SECRET_KEY` | Clerk authentication key | - |
+| `JWT_SECRET_KEY` | JWT authentication secret key | - |
 | `LOG_LEVEL` | Logging level | `INFO` |
 | `CORS_ORIGINS` | Allowed CORS origins | `http://localhost:3000` |
 

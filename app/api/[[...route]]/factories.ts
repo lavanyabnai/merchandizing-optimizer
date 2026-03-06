@@ -1,4 +1,3 @@
-import { clerkMiddleware, getAuth } from '@hono/clerk-auth';
 import { zValidator } from '@hono/zod-validator';
 import { and, desc, eq, inArray } from 'drizzle-orm';
 import { Hono } from 'hono';
@@ -49,14 +48,8 @@ const app = new Hono()
         inclusionType: z.string().optional()
       })
     ),
-    clerkMiddleware(),
     async (c) => {
-      const auth = getAuth(c);
       const { locationId, type, inclusionType } = c.req.valid('query');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       const data = await db
         .select({
@@ -99,14 +92,8 @@ const app = new Hono()
         id: z.string()
       })
     ),
-    clerkMiddleware(),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       const [data] = await db
         .select({
@@ -140,15 +127,9 @@ const app = new Hono()
   )
   .post(
     '/',
-    clerkMiddleware(),
     zValidator('json', insertFactorySchema),
     async (c) => {
-      const auth = getAuth(c);
       const values = c.req.valid('json');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       const [data] = await db.insert(factories).values(values).returning();
 
@@ -157,7 +138,6 @@ const app = new Hono()
   )
   .post(
     '/bulk-create',
-    clerkMiddleware(),
     zValidator(
       'json',
       z.array(
@@ -172,12 +152,7 @@ const app = new Hono()
       )
     ),
     async (c) => {
-      const auth = getAuth(c);
       const values = c.req.valid('json');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       try {
         // Get all unique location names
@@ -217,7 +192,6 @@ const app = new Hono()
   )
   .post(
     '/bulk-delete',
-    clerkMiddleware(),
     zValidator(
       'json',
       z.object({
@@ -225,12 +199,7 @@ const app = new Hono()
       })
     ),
     async (c) => {
-      const auth = getAuth(c);
       const { ids } = c.req.valid('json');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       try {
         const data = await db
@@ -247,7 +216,6 @@ const app = new Hono()
   )
   .delete(
     '/:id',
-    clerkMiddleware(),
     zValidator(
       'param',
       z.object({
@@ -255,12 +223,7 @@ const app = new Hono()
       })
     ),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       const [data] = await db
         .delete(factories)
@@ -276,7 +239,6 @@ const app = new Hono()
   )
   .patch(
     '/:id',
-    clerkMiddleware(),
     zValidator(
       'param',
       z.object({
@@ -285,13 +247,8 @@ const app = new Hono()
     ),
     zValidator('json', patchFactorySchema),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
       const values = c.req.valid('json');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       try {
         const [data] = await db

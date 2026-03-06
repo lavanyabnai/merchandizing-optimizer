@@ -13,7 +13,9 @@
       "Bash(cd:*)",
       "Bash(test:*)",
       "Bash(find:*)",
-      "Bash(pnpm update:*)"
+      "Bash(pnpm update:*)",
+      "Bash(vercel --prod --yes)",
+      "Bash(vercel inspect merchandizing-optimizer-601wbnpie-lavs-projects-3366b3ee.vercel.app --logs)"
     ]
   }
 }

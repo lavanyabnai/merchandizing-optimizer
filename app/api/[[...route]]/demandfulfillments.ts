@@ -1,4 +1,3 @@
-import { clerkMiddleware, getAuth } from '@hono/clerk-auth';
 import { zValidator } from '@hono/zod-validator';
 import { eq } from 'drizzle-orm';
 import { Hono } from 'hono';
@@ -10,12 +9,7 @@ import { demandFulfillment } from '@/db/schema';
 
 const app = new Hono()
   
-  .get('/', clerkMiddleware(), async (c) => {
-    const auth = getAuth(c);
-
-    if (!auth?.userId) {
-      return c.json({ error: 'Unauthorized' }, 401);
-    }
+  .get('/', async (c) => {
 
     const data = await db
       .select({
@@ -49,14 +43,8 @@ const app = new Hono()
         id: z.string()
       })
     ),
-    clerkMiddleware(),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       const [data] = await db
         .select()

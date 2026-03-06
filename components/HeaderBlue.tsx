@@ -7,46 +7,45 @@ import { MobileSidebar } from "@/components/mobile-sidebar";
 // import { GlobalSearch } from "@/components/global-search";
 
 
-import {
+// import {
 
-  HomeIcon,
-  ShoppingBagIcon,
-} from "lucide-react"
+//   HomeIcon,
+//   ShoppingBagIcon,
+// } from "lucide-react"
 
-import { MegaDropdownCategories } from "@/components/mega-dropdown-categories";
-import { UserButton } from "@clerk/nextjs";
+// import { MegaDropdownCategories } from "@/components/mega-dropdown-categories";
 
 
 export const HeaderBlue = () => {
  
-  const categories = [
-    {
-      category: "Digital Twin",
-      items: [
-        {
-          name: "Risk Analysis",
-          description: "Balance your demand and supply",
-          to: "/risk/analysis",
-          icon: HomeIcon,
-          highlight: true,
-          iconBackground: "bg-blue-100",
-          iconForeground: "text-blue-700",
-        },
-        {
-          name: "Merchandizing Optimizer",
-          description: "Optimize your merchandizing strategy",
-          to: "/risk/merchandizing-optimizer",
-          icon: ShoppingBagIcon,
-          highlight: true,
-          iconBackground: "bg-orange-100",
-          iconForeground: "text-orange-700",
-        },
+  // const categories = [
+  //   {
+  //     category: "Digital Twin",
+  //     items: [
+  //       {
+  //         name: "Risk Analysis",
+  //         description: "Balance your demand and supply",
+  //         to: "/risk/analysis",
+  //         icon: HomeIcon,
+  //         highlight: true,
+  //         iconBackground: "bg-blue-100",
+  //         iconForeground: "text-blue-700",
+  //       },
+  //       {
+  //         name: "Merchandizing Optimizer",
+  //         description: "Optimize your merchandizing strategy",
+  //         to: "/risk/merchandizing-optimizer",
+  //         icon: ShoppingBagIcon,
+  //         highlight: true,
+  //         iconBackground: "bg-orange-100",
+  //         iconForeground: "text-orange-700",
+  //       },
       
        
-      ],
-    },
+  //     ],
+  //   },
 
-  ]
+  // ]
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
     <nav className="py-2 px-6 flex items-center justify-between bg-blue-900">
@@ -63,13 +62,7 @@ export const HeaderBlue = () => {
      <div className="ml-6 hidden lg:block">
         <h1 className="text-lg font-semibold text-white">Assortment Optimizer</h1>
       </div>
-      <UserButton appearance={{
-        elements: {
-          avatarBox: "size-10",
-        },
-      }} />
-
-      <MegaDropdownCategories categories={categories} />
+      {/* <MegaDropdownCategories categories={categories} /> */}
       </div>
     </nav>
     </header>

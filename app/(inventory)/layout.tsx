@@ -9,7 +9,7 @@ export default async function ChatLayout({ children }: ChatLayoutProps) {
     <div className="pt-14 h-screen">
       <HeaderBlue />
     
-      <div className="w-full h-full overflow-y-auto overflow-x-hidden py-6 px-6">
+      <div className="w-full h-full overflow-y-auto">
       {children}
       </div>
     </div>

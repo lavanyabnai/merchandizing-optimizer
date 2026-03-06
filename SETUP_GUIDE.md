@@ -165,11 +165,6 @@ DATABASE_MAX_OVERFLOW=10
 REDIS_URL=redis://localhost:6379/0
 REDIS_TTL_DEFAULT=3600
 
-# Authentication (Clerk)
-CLERK_SECRET_KEY=sk_test_xxxxx
-CLERK_PUBLISHABLE_KEY=pk_test_xxxxx
-CLERK_JWKS_URL=https://your-instance.clerk.accounts.dev/.well-known/jwks.json
-
 # Logging
 LOG_LEVEL=DEBUG
 LOG_FORMAT=text
@@ -180,19 +175,11 @@ LOG_FORMAT=text
 Location: `d:\merchandizing-optimizer\.env`
 
 ```env
-# Clerk Authentication
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY="pk_test_xxxxx"
-CLERK_SECRET_KEY="sk_test_xxxxx"
-
 # App URL
 NEXT_PUBLIC_APP_URL="http://localhost:3000"
 
 # Backend Service
 ASSORTMENT_SERVICE_URL="http://localhost:8000"
-
-# Clerk Routes
-NEXT_PUBLIC_CLERK_SIGN_IN_URL="/sign-in"
-NEXT_PUBLIC_CLERK_SIGN_UP_URL="/sign-up"
 ```
 
 ---

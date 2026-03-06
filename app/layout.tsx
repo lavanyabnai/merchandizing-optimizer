@@ -1,5 +1,4 @@
 import type React from "react"
-import { ClerkProvider } from "@clerk/nextjs"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { headers } from "next/headers"
@@ -25,8 +24,11 @@ LicenseManager.setLicenseKey(
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://chat.vercel.ai"),
-  title: "Risk Management System",
-  description: "Risk Management System",
+  title: "Assortment Optimizer",
+  description: "Assortment Optimizer",
+  icons: {
+    icon: "/favicon.ico",
+  },
 }
 
 const inter = Inter({
@@ -44,7 +46,6 @@ export default async function RootLayout({
   const cspHeader = headersList.get('Content-Security-Policy');
 
   return (
-    <ClerkProvider>
       <html lang="en" className="size-full" suppressHydrationWarning>
         <head>
           {cspHeader && <meta httpEquiv="Content-Security-Policy" content={cspHeader} />}
@@ -63,6 +64,5 @@ export default async function RootLayout({
           </ThemeProvider>
         </body>
       </html>
-    </ClerkProvider>
   )
 }

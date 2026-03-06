@@ -2,20 +2,15 @@
  * Assortment Optimizer API Gateway
  *
  * This module proxies requests to the Assortment Optimizer microservice.
- * It handles authentication via Clerk and forwards requests with proper headers.
  */
 
 import { Hono } from 'hono';
-import { getAuth } from '@hono/clerk-auth';
-import { clerkMiddleware } from '@hono/clerk-auth';
 
 // Get the microservice URL from environment
 const ASSORTMENT_SERVICE_URL = process.env.ASSORTMENT_SERVICE_URL || 'http://localhost:8000';
 
 // Create Hono app for assortment routes
 const app = new Hono()
-  // Apply Clerk middleware to all routes
-  .use('*', clerkMiddleware())
 
   // Health check proxy (no auth required)
   .get('/health', async (c) => {
@@ -43,23 +38,8 @@ const app = new Hono()
     }
   })
 
-  // Catch-all proxy for all other routes (auth required)
+  // Catch-all proxy for all other routes
   .all('/*', async (c) => {
-    const auth = getAuth(c);
-
-    // Check authentication
-    if (!auth?.userId) {
-      return c.json(
-        {
-          error: {
-            code: 'UNAUTHORIZED',
-            message: 'Authentication required',
-          },
-        },
-        401
-      );
-    }
-
     // Build the target URL
     const path = c.req.path.replace('/api/assortment', '');
     const url = new URL(c.req.url);
@@ -85,16 +65,6 @@ const app = new Hono()
           // Forward the original Authorization header if present
           ...(c.req.header('Authorization') && {
             Authorization: c.req.header('Authorization')!,
-          }),
-          // Add user ID for the microservice (already validated by Clerk)
-          'X-User-Id': auth.userId,
-          // Forward session ID if available
-          ...(auth.sessionId && {
-            'X-Session-Id': auth.sessionId,
-          }),
-          // Forward organization ID if available
-          ...(auth.orgId && {
-            'X-Org-Id': auth.orgId,
           }),
         },
         body: body || undefined,

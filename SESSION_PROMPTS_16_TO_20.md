@@ -125,7 +125,7 @@ Working in: d:/merchandizing-optimizer/
      - Screenshots on failure
 
 2. Create test fixtures (e2e/fixtures/):
-   - auth.fixture.ts: Handle Clerk authentication
+   - auth.fixture.ts: Handle authentication
    - data.fixture.ts: Seed test data via API
 
 3. Create page objects (e2e/pages/):
@@ -762,7 +762,7 @@ Final deliverables:
 |---|---------|-------|-------------|
 | 1 | Project Setup | Sonnet 4.5 | FastAPI skeleton + Docker |
 | 2 | Database Schema | Sonnet 4.5 | SQLAlchemy models + migrations |
-| 3 | Auth Integration | Opus 4.5 | Clerk JWT + API gateway |
+| 3 | Auth Integration | Opus 4.5 | JWT + API gateway |
 | 4 | Data Layer | Sonnet 4.5 | Data generator service |
 | 5 | Demand Model | Opus 4.5 | MNL demand service |
 | 6 | Optimizer | Opus 4.5 | Greedy optimizer service |

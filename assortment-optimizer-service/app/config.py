@@ -55,12 +55,11 @@ class Settings(BaseSettings):
     )
     redis_ttl_default: int = Field(default=3600, description="Default cache TTL in seconds")
 
-    # Authentication (Clerk)
-    clerk_secret_key: str = Field(default="", description="Clerk secret key")
-    clerk_publishable_key: str = Field(default="", description="Clerk publishable key")
-    clerk_jwks_url: str = Field(
-        default="https://api.clerk.com/v1/jwks",
-        description="Clerk JWKS URL",
+    # Authentication (JWT)
+    jwt_secret_key: str = Field(default="", description="JWT secret key")
+    jwt_jwks_url: str = Field(
+        default="",
+        description="JWKS URL for JWT verification",
     )
 
     # Logging

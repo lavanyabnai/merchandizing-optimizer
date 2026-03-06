@@ -8,7 +8,7 @@ from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from app.config import Settings, get_settings
 from app.core.logging import get_logger
 from app.core.security import (
-    ClerkJWTError,
+    JWTError,
     SignatureVerificationError,
     TokenClaims,
     TokenExpiredError,
@@ -23,13 +23,13 @@ logger = get_logger(__name__)
 # HTTP Bearer security scheme for OpenAPI docs
 security_scheme = HTTPBearer(
     scheme_name="Bearer",
-    description="Clerk JWT token",
+    description="JWT Bearer token",
     auto_error=False,
 )
 
 
-def _handle_jwt_error(error: ClerkJWTError) -> HTTPException:
-    """Convert ClerkJWTError to HTTPException with appropriate status."""
+def _handle_jwt_error(error: JWTError) -> HTTPException:
+    """Convert JWTError to HTTPException with appropriate status."""
     if isinstance(error, TokenMissingError):
         return HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -119,7 +119,7 @@ async def get_current_user(
         )
         return claims
 
-    except ClerkJWTError as e:
+    except JWTError as e:
         logger.warning(
             "Authentication failed",
             error_code=e.code,
@@ -158,7 +158,7 @@ async def get_current_user_or_none(
 
     try:
         return verify_token(credentials.credentials)
-    except ClerkJWTError:
+    except JWTError:
         return None
 
 

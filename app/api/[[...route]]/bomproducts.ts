@@ -1,4 +1,3 @@
-import { clerkMiddleware, getAuth } from '@hono/clerk-auth';
 import { zValidator } from '@hono/zod-validator';
 import { eq, inArray } from 'drizzle-orm';
 import { Hono } from 'hono';
@@ -14,11 +13,7 @@ const patchBomSchema = z.object({
 });
 
 const app = new Hono()
-  .get('/', clerkMiddleware(), async (c) => {
-    const auth = getAuth(c);
-    if (!auth?.userId) {
-      return c.json({ error: 'Unauthorized' }, 401);
-    }
+  .get('/', async (c) => {
     const data = await db
       .select({
         id: bom.id,
@@ -42,13 +37,8 @@ const app = new Hono()
         id: z.string()
       })
     ),
-    clerkMiddleware(),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
       const [data] = await db
         .select()
         .from(bom)
@@ -61,18 +51,12 @@ const app = new Hono()
   )
   .post(
     '/',
-    clerkMiddleware(),
     zValidator('json', insertBomSchema),
     async (c) => {
       try {
-        const auth = getAuth(c);
         const values = c.req.valid('json');
 
         console.log('Received POST data:', values);
-
-        if (!auth?.userId) {
-          return c.json({ error: 'Unauthorized' }, 401);
-        }
 
         const [data] = await db.insert(bom).values(values).returning();
         return c.json({ data });
@@ -101,7 +85,6 @@ const app = new Hono()
   )
   .post(
     '/bulk-create',
-    clerkMiddleware(),
     zValidator(
       'json',
       z.array(
@@ -112,12 +95,7 @@ const app = new Hono()
     ),
     async (c) => {
       try {
-        const auth = getAuth(c);
         const values = c.req.valid('json');
-
-        if (!auth?.userId) {
-          return c.json({ error: 'Unauthorized' }, 401);
-        }
 
         // Delete existing BOMs and insert new ones
         await db.delete(bom);
@@ -144,14 +122,9 @@ const app = new Hono()
   )
   .post(
     '/bulk-delete',
-    clerkMiddleware(),
     zValidator('json', z.object({ ids: z.array(z.number()) })),
     async (c) => {
-      const auth = getAuth(c);
       const { ids } = c.req.valid('json');
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
       try {
         const data = await db
           .delete(bom)
@@ -166,14 +139,9 @@ const app = new Hono()
   )
   .delete(
     '/:id',
-    clerkMiddleware(),
     zValidator('param', z.object({ id: z.string() })),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
       const [data] = await db
         .delete(bom)
         .where(eq(bom.id, parseInt(id)))
@@ -186,7 +154,6 @@ const app = new Hono()
   )
   .patch(
     '/:id',
-    clerkMiddleware(),
     zValidator(
       'param',
       z.object({
@@ -196,13 +163,8 @@ const app = new Hono()
     zValidator('json', patchBomSchema),
     async (c) => {
       try {
-        const auth = getAuth(c);
         const { id } = c.req.valid('param');
         const values = c.req.valid('json');
-
-        if (!auth?.userId) {
-          throw new Error('Unauthorized');
-        }
 
         const [data] = await db
           .update(bom)

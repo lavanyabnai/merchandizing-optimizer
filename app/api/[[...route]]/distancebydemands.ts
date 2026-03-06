@@ -1,4 +1,3 @@
-import { clerkMiddleware, getAuth } from '@hono/clerk-auth';
 import { zValidator } from '@hono/zod-validator';
 import { eq, inArray } from 'drizzle-orm';
 import { Hono } from 'hono';
@@ -20,11 +19,7 @@ const patchDistanceSchema = z.object({
 });
 
 const app = new Hono()
-  .get('/', clerkMiddleware(), async (c) => {
-    const auth = getAuth(c);
-    if (!auth?.userId) {
-      return c.json({ error: 'Unauthorized' }, 401);
-    }
+  .get('/', async (c) => {
     const data = await db
       .select({
         id: distanceCoverageByDemands.id,
@@ -52,13 +47,8 @@ const app = new Hono()
         id: z.string()
       })
     ),
-    clerkMiddleware(),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
       const [data] = await db
         .select()
         .from(distanceCoverageByDemands)
@@ -71,7 +61,6 @@ const app = new Hono()
   )
   .post(
     '/',
-    clerkMiddleware(),
     zValidator(
       'json',
       insertDistanceCoverageByDemandSchema.omit({
@@ -79,12 +68,7 @@ const app = new Hono()
       })
     ),
     async (c) => {
-      const auth = getAuth(c);
       const values = c.req.valid('json');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       const [data] = await db
         .insert(distanceCoverageByDemands)
@@ -98,7 +82,6 @@ const app = new Hono()
   )
   .post(
     '/bulk-create',
-    clerkMiddleware(),
     zValidator(
       'json',
       z.array(
@@ -108,12 +91,7 @@ const app = new Hono()
       )
     ),
     async (c) => {
-      const auth = getAuth(c);
       const values = c.req.valid('json');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       const data = await db
         .insert(distanceCoverageByDemands)
@@ -129,14 +107,9 @@ const app = new Hono()
   )
   .post(
     '/bulk-delete',
-    clerkMiddleware(),
     zValidator('json', z.object({ ids: z.array(z.number()) })),
     async (c) => {
-      const auth = getAuth(c);
       const { ids } = c.req.valid('json');
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
       try {
         const data = await db
           .delete(distanceCoverageByDemands)
@@ -151,14 +124,9 @@ const app = new Hono()
   )
   .delete(
     '/:id',
-    clerkMiddleware(),
     zValidator('param', z.object({ id: z.string() })),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
       const [data] = await db
         .delete(distanceCoverageByDemands)
         .where(eq(distanceCoverageByDemands.id, parseInt(id)))
@@ -171,7 +139,6 @@ const app = new Hono()
   )
   .patch(
     '/:id',
-    clerkMiddleware(),
     zValidator(
       'param',
       z.object({
@@ -181,13 +148,8 @@ const app = new Hono()
     zValidator('json', patchDistanceSchema),
     async (c) => {
       try {
-        const auth = getAuth(c);
         const { id } = c.req.valid('param');
         const values = c.req.valid('json');
-
-        if (!auth?.userId) {
-          throw new Error('Unauthorized');
-        }
 
         const [data] = await db
           .update(distanceCoverageByDemands)

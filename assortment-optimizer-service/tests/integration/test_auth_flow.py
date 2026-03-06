@@ -8,7 +8,7 @@ class TestValidToken:
     """Tests for valid token handling."""
 
     @pytest.mark.asyncio
-    async def test_valid_clerk_token_passes(
+    async def test_valid_jwt_token_passes(
         self,
         client: AsyncClient,
         auth_headers: dict,

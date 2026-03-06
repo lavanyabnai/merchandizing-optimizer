@@ -1,4 +1,3 @@
-import { clerkMiddleware, getAuth } from '@hono/clerk-auth';
 import { zValidator } from '@hono/zod-validator';
 import { eq, inArray } from 'drizzle-orm';
 import { Hono } from 'hono';
@@ -33,12 +32,7 @@ const patchNetScenarioSchema = z.object({
 });
 
 const app = new Hono()
-  .get('/', clerkMiddleware(), async (c) => {
-    const auth = getAuth(c);
-
-    if (!auth?.userId) {
-      return c.json({ error: 'Unauthorized' }, 401);
-    }
+  .get('/', async (c) => {
 
     const data = await db.select().from(netScenario);
 
@@ -52,14 +46,8 @@ const app = new Hono()
         id: z.string()
       })
     ),
-    clerkMiddleware(),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       const [data] = await db
         .select()
@@ -75,15 +63,9 @@ const app = new Hono()
   )
   .post(
     '/',
-    clerkMiddleware(),
     zValidator('json', insertNetScenarioSchema),
     async (c) => {
-      const auth = getAuth(c);
       const values = c.req.valid('json');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       // Fix the metadata type handling
       if (typeof values.metadata === 'string') {
@@ -101,15 +83,9 @@ const app = new Hono()
   )
   .post(
     '/bulk-create',
-    clerkMiddleware(),
     zValidator('json', z.array(insertNetScenarioSchema.omit({ id: true }))),
     async (c) => {
-      const auth = getAuth(c);
       const values = c.req.valid('json');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
       // Fix: Ensure 'metadata' is an object for each item, not a string, to match the DB schema
       for (const v of values) {
         if (typeof v.metadata === 'string') {
@@ -129,7 +105,6 @@ const app = new Hono()
   )
   .post(
     '/bulk-delete',
-    clerkMiddleware(),
     zValidator(
       'json',
       z.object({
@@ -137,12 +112,7 @@ const app = new Hono()
       })
     ),
     async (c) => {
-      const auth = getAuth(c);
       const { ids } = c.req.valid('json');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       try {
         const data = await db
@@ -159,7 +129,6 @@ const app = new Hono()
   )
   .delete(
     '/:id',
-    clerkMiddleware(),
     zValidator(
       'param',
       z.object({
@@ -167,12 +136,7 @@ const app = new Hono()
       })
     ),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       const [data] = await db
         .delete(netScenario)
@@ -188,7 +152,6 @@ const app = new Hono()
   )
   .patch(
     '/:id',
-    clerkMiddleware(),
     zValidator(
       'param',
       z.object({
@@ -197,13 +160,8 @@ const app = new Hono()
     ),
     zValidator('json', patchNetScenarioSchema),
     async (c) => {
-      const auth = getAuth(c);
       const { id } = c.req.valid('param');
       const values = c.req.valid('json');
-
-      if (!auth?.userId) {
-        return c.json({ error: 'Unauthorized' }, 401);
-      }
 
       const [data] = await db
         .update(netScenario)

@@ -194,9 +194,9 @@ export function Planogram({ useDemoData = true }: PlanogramProps) {
       </div>
 
       {/* Main Layout */}
-      <div className="grid gap-6 lg:grid-cols-4">
+      <div className="grid gap-6 grid-cols-[1fr_2fr] w-full">
         {/* Left Panel: Configuration */}
-        <div className="lg:col-span-1">
+        <div>
           <ShelfConfig
             values={shelfConfig}
             onChange={setShelfConfig}
@@ -204,7 +204,8 @@ export function Planogram({ useDemoData = true }: PlanogramProps) {
         </div>
 
         {/* Right Panel: Planogram Display */}
-        <div className="lg:col-span-3 space-y-6">
+        {/* Right Panel: Planogram Display */}
+        <div className="space-y-6 w-full">
           {products.length > 0 ? (
             <>
               {/* Shelf Display */}
