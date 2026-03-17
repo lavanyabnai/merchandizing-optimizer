@@ -15,7 +15,12 @@
       "Bash(find:*)",
       "Bash(pnpm update:*)",
       "Bash(vercel --prod --yes)",
-      "Bash(vercel inspect merchandizing-optimizer-601wbnpie-lavs-projects-3366b3ee.vercel.app --logs)"
+      "Bash(vercel inspect merchandizing-optimizer-601wbnpie-lavs-projects-3366b3ee.vercel.app --logs)",
+      "Bash(npx vercel:*)",
+      "Bash(ls -la /d/merchandizing-optimizer/app/\\\\\\(inventory\\\\\\)/merchandizing-optimizer/monte-carlo-simulation/)"
+    ],
+    "additionalDirectories": [
+      "D:\\merchandizing-optimizer\\features\\assortment\\components"
     ]
   }
 }
