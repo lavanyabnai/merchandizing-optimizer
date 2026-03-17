@@ -1,0 +1,35 @@
+[
+  {
+    "cost_Name": "Material Cost",
+    "costValue": 75
+  },
+  {
+    "cost_Name": "Inventory Hold Cost",
+    "costValue": 25
+  },
+  {
+    "cost_Name": "Stockout Cost",
+    "costValue": 50
+  },
+  {
+    "cost_Name": "Hiring Cost",
+    "costValue": 1200
+  },
+
+  {
+    "cost_Name": "Firing Cost",
+    "costValue": 3600
+  },
+  {
+    "cost_Name": "Worker Cost",
+    "costValue": 2400
+  },
+  {
+    "cost_Name": "Overtime Cost",
+    "costValue": 25
+  },
+  {
+    "cost_Name": "OutSourcing Cost",
+    "costValue": 175
+  }
+]

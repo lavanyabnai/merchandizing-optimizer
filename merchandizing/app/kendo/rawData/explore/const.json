@@ -1,0 +1,56 @@
+[
+  {
+    "constName": "Total Demand",
+    "constValue": 75
+  },
+  {
+    "constName": "Labor",
+    "constValue": 25
+  },
+  {
+    "constName": "Max Work",
+    "constValue": 50
+  },
+  {
+    "constName": "Max Overtime",
+    "constValue": 1200
+  },
+
+  {
+    "constName": "Inventory Start",
+    "constValue": 3600
+  },
+  {
+    "constName": "Inventory End",
+    "constValue": 2400
+  },
+
+  {
+    "constName": "Backlog Start",
+    "constValue": 25
+  },
+  {
+    "constName": "Backlog End",
+    "constValue": 175
+  },
+  {
+    "constName": "Number Workers Start",
+    "constValue": 175
+  },
+  {
+    "constName": "Min End Workers",
+    "constValue": 175
+  },
+  {
+    "constName": "Max End Workers",
+    "constValue": 175
+  },
+  {
+    "constName": "Num Weeks PM",
+    "constValue": 175
+  },
+  {
+    "constName": "Num Hrs PW",
+    "constValue": 175
+  }
+]

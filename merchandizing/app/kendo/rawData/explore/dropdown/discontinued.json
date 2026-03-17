@@ -1,0 +1,4 @@
+[
+    {"DiscID": 1, "DiscName": "True", "DiscValue": true},
+    {"DiscID": 2, "DiscName": "False", "DiscValue": false}
+ ]

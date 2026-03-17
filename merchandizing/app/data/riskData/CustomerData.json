@@ -1,0 +1,352 @@
+[
+  {
+    "Name": "Los Angeles",
+    "Type": "Customer",
+    "Location": "New York",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 0"
+  },
+  {
+    "Name": "Chicago",
+    "Type": "Customer",
+    "Location": "Los Angeles",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 1"
+  },
+  {
+    "Name": "Houston",
+    "Type": "Retail",
+    "Location": "Chicago",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 2"
+  },
+  {
+    "Name": "Phoenix",
+    "Type": "Retail",
+    "Location": "Houston",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 3"
+  },
+  {
+    "Name": "Philadelphia",
+    "Type": "Customer",
+    "Location": "Phoenix",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 4"
+  },
+  {
+    "Name": "San Antonio",
+    "Type": "Retail",
+    "Location": "Philadelphia",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 5"
+  },
+  {
+    "Name": "San Diego",
+    "Type": "Customer",
+    "Location": "San Antonio",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 6"
+  },
+  {
+    "Name": "Dallas",
+    "Type": "Retail",
+    "Location": "San Diego",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 7"
+  },
+  {
+    "Name": "San Jose",
+    "Type": "Customer",
+    "Location": "Dallas",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 8"
+  },
+  {
+    "Name": "Austin",
+    "Type": "Retail",
+    "Location": "San Jose",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 9"
+  },
+  {
+    "Name": "Jacksonville",
+    "Type": "Customer",
+    "Location": "Austin",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 10"
+  },
+  {
+    "Name": "Fort Worth",
+    "Type": "Retail",
+    "Location": "Jacksonville",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 11"
+  },
+  {
+    "Name": "Columbus",
+    "Type": "Customer",
+    "Location": "Fort Worth",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 12"
+  },
+  {
+    "Name": "San Francisco",
+    "Type": "Retail",
+    "Location": "Columbus",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 13"
+  },
+  {
+    "Name": "Charlotte",
+    "Type": "Customer",
+    "Location": "San Francisco",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 14"
+  },
+  {
+    "Name": "Indianapolis",
+    "Type": "Retail",
+    "Location": "Charlotte",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 15"
+  },
+  {
+    "Name": "Seattle",
+    "Type": "Customer",
+    "Location": "Indianapolis",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 16"
+  },
+  {
+    "Name": "Denver",
+    "Type": "Retail",
+    "Location": "Seattle",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 17"
+  },
+  {
+    "Name": "Washington",
+    "Type": "Customer",
+    "Location": "Denver",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 18"
+  },
+  {
+    "Name": "Boston",
+    "Type": "Retail",
+    "Location": "Washington",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 19"
+  },
+  {
+    "Name": "El Paso",
+    "Type": "Customer",
+    "Location": "Boston",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 20"
+  },
+  {
+    "Name": "Detroit",
+    "Type": "Retail",
+    "Location": "El Paso",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 21"
+  },
+  {
+    "Name": "Nashville",
+    "Type": "Customer",
+    "Location": "Detroit",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 22"
+  },
+  {
+    "Name": "Memphis",
+    "Type": "Retail",
+    "Location": "Nashville",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 23"
+  },
+  {
+    "Name": "Portland",
+    "Type": "Customer",
+    "Location": "Memphis",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 24"
+  },
+  {
+    "Name": "Oklahoma City",
+    "Type": "Retail",
+    "Location": "Portland",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 25"
+  },
+  {
+    "Name": "Las Vegas",
+    "Type": "Customer",
+    "Location": "Oklahoma City",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 26"
+  },
+  {
+    "Name": "Louisville",
+    "Type": "Retail",
+    "Location": "Las Vegas",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 27"
+  },
+  {
+    "Name": "Baltimore",
+    "Type": "Customer",
+    "Location": "Louisville",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 28"
+  },
+  {
+    "Name": "Milwaukee",
+    "Type": "Retail",
+    "Location": "Baltimore",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 29"
+  },
+  {
+    "Name": "Albuquerque",
+    "Type": "Customer",
+    "Location": "Milwaukee",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 30"
+  },
+  {
+    "Name": "Tucson",
+    "Type": "Retail",
+    "Location": "Albuquerque",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 31"
+  },
+  {
+    "Name": "Fresno",
+    "Type": "Customer",
+    "Location": "Tucson",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 32"
+  },
+  {
+    "Name": "Sacramento",
+    "Type": "Retail",
+    "Location": "Fresno",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 33"
+  },
+  {
+    "Name": "Mesa",
+    "Type": "Customer",
+    "Location": "Sacramento",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 34"
+  },
+  {
+    "Name": "Kansas City",
+    "Type": "Retail",
+    "Location": "Mesa",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 35"
+  },
+  {
+    "Name": "Atlanta",
+    "Type": "Customer",
+    "Location": "Kansas City",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 36"
+  },
+  {
+    "Name": "Omaha",
+    "Type": "Retail",
+    "Location": "Atlanta",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 37"
+  },
+  {
+    "Name": "Miami",
+    "Type": "Customer",
+    "Location": "Omaha",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 38"
+  },
+  {
+    "Name": "Oakland",
+    "Type": "Retail",
+    "Location": "Miami",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 39"
+  },
+  {
+    "Name": "Minneapolis",
+    "Type": "Customer",
+    "Location": "Oakland",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 40"
+  },
+  {
+    "Name": "Tulsa",
+    "Type": "Retail",
+    "Location": "Minneapolis",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 41"
+  },
+  {
+    "Name": "Arlington",
+    "Type": "Customer",
+    "Location": "Tulsa",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 42"
+  },
+  {
+    "Name": "New Orleans",
+    "Type": "Retail",
+    "Location": "Arlington",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 43"
+  },
+  {
+    "Name": "Wichita",
+    "Type": "Customer",
+    "Location": "New Orleans",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 44"
+  },
+  {
+    "Name": "Cleveland",
+    "Type": "Retail",
+    "Location": "Wichita",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 45"
+  },
+  {
+    "Name": "Tampa",
+    "Type": "Customer",
+    "Location": "Cleveland",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 46"
+  },
+  {
+    "Name": "Bakersfield",
+    "Type": "Retail",
+    "Location": "Tampa",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 47"
+  },
+  {
+    "Name": "Aurora",
+    "Type": "Customer",
+    "Location": "Bakersfield",
+    "Include": "Partial",
+    "AdditionalParameter": "Parameter 48"
+  },
+  {
+    "Name": "Anaheim",
+    "Type": "Retail",
+    "Location": "Aurora",
+    "Include": "Full",
+    "AdditionalParameter": "Parameter 49"
+  }
+]

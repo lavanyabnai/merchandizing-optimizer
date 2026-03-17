@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# Build cache
+.next/
+out/
+build/
+
+# Git
+.git/
+
+# Testing
+coverage/
+playwright-report/
+blob-report/
+test-results/
+e2e/screenshots/
+
+# Python backend (deployed separately)
+assortment-optimizer-service/
+assortment-optimizer-main/
+
+# Virtual environments
+.venv/
+venv/
+
+# Misc
+*.tsbuildinfo
+.pnpm-debug.log*
+.DS_Store
+*.zip
+*.pem
+.vercel/
+.env*

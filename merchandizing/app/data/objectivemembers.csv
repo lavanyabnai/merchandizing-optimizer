@@ -1,0 +1,4 @@
+name,expression,coefficient,addToObjective,inclusionType,customConstraintId
+ab,cd,1,true,exclude,2
+cd,ef,2,true,exclude,3
+gh,ij,3,true,exclude,4

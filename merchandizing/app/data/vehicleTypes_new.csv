@@ -1,0 +1,4 @@
+name,capacity,capacityUnit,speed,speedUnit
+Truck,11,car,60,ford
+Lorry,12,ford,80,Bmw
+Truck,14,tata,120,car

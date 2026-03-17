@@ -1,0 +1,2 @@
+sourceId,productId,timePeriodId,type,batchsize,priceperunit,currency,stepsize
+5,16,5,sales,5,50,INR,3

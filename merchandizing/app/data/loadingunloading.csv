@@ -1,0 +1,2 @@
+name,facilityId,type,vehicleTypes,numberOfGates,units,processingTime,timeUnit
+bike,2,periodic loadingunloading,7,5,two,5,two

@@ -1,0 +1,72 @@
+[
+  {
+    "Name": "Customer_1",
+    "Type": "Wholesale",
+    "Location": "USA",
+    "InclusionType": "Full",
+    "AdditionalParameters": "Parameter_1"
+  },
+  {
+    "Name": "Customer_2",
+    "Type": "Retail",
+    "Location": "Mexico",
+    "InclusionType": "Partial",
+    "AdditionalParameters": "Parameter_2"
+  },
+  {
+    "Name": "Customer_3",
+    "Type": "Retail",
+    "Location": "Canada",
+    "InclusionType": "Partial",
+    "AdditionalParameters": "Parameter_3"
+  },
+  {
+    "Name": "Customer_4",
+    "Type": "Retail",
+    "Location": "Mexico",
+    "InclusionType": "Full",
+    "AdditionalParameters": "Parameter_4"
+  },
+  {
+    "Name": "Customer_5",
+    "Type": "Wholesale",
+    "Location": "USA",
+    "InclusionType": "Partial",
+    "AdditionalParameters": "Parameter_5"
+  },
+  {
+    "Name": "Customer_6",
+    "Type": "Retail",
+    "Location": "Mexico",
+    "InclusionType": "Full",
+    "AdditionalParameters": "Parameter_6"
+  },
+  {
+    "Name": "Customer_7",
+    "Type": "Wholesale",
+    "Location": "USA",
+    "InclusionType": "Partial",
+    "AdditionalParameters": "Parameter_7"
+  },
+  {
+    "Name": "Customer_8",
+    "Type": "Retail",
+    "Location": "USA",
+    "InclusionType": "Full",
+    "AdditionalParameters": "Parameter_8"
+  },
+  {
+    "Name": "Customer_9",
+    "Type": "Wholesale",
+    "Location": "Mexico",
+    "InclusionType": "Full",
+    "AdditionalParameters": "Parameter_9"
+  },
+  {
+    "Name": "Customer_10",
+    "Type": "Retail",
+    "Location": "USA",
+    "InclusionType": "Partial",
+    "AdditionalParameters": "Parameter_10"
+  }
+]

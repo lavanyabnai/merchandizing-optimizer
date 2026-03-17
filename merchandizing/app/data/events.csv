@@ -1,0 +1,3 @@
+name,eventType,occurrenceType,occurrenceTime,triggerEventName,probability,parameters
+ab,box,aswin,vans,call,2,3
+cd,boxes,aswins,vans,called,4,5

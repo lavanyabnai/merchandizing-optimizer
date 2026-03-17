@@ -1,0 +1,9 @@
+name,eventType,occurrenceType,occurrenceTime,triggerEventName,probability,parameters
+ab,box,aswin,vans,call,2,{}
+cd,box,aswin,vans,call,4,{}
+ef,box,aswin,vans,call,6,{}
+gh,box,aswin,vans,call,8,{}
+ij,box,aswin,vans,call,10,{}
+kl,box,aswin,vans,call,12,{}
+mn,box,aswin,vans,call,14,{}
+op,box,aswin,vans,call,16,{}

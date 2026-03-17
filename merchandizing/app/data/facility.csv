@@ -1,0 +1,4 @@
+name,type,inclusionType,capacity,capacityUnit,icon,locationId
+BFP,DC,Exclude,10,barrels,,8
+SCP,DC,Include,9,barrels,,8
+BO,DC,Include,1,barrels,,8

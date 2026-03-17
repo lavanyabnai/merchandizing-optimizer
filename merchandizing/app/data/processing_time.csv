@@ -1,0 +1,4 @@
+facility_id,product_id,type,time_unit,time,timeunit_id
+1,11,periodic processing time,7,8,1
+1,12,periodic processing time,14,16,2
+1,13,periodic processing time,21,24,3

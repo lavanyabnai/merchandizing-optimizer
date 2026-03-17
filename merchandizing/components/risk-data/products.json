@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Shoes",
+    "unit": "pcs",
+    "sellingPrice": 100,
+    "cost": 40,
+    "currency": "USD"
+  },
+  {
+    "id": 2,
+    "name": "T-Shirt",
+    "unit": "pcs",
+    "sellingPrice": 25,
+    "cost": 8,
+    "currency": "USD"
+  },
+  {
+    "id": 3,
+    "name": "Jeans",
+    "unit": "pcs",
+    "sellingPrice": 80,
+    "cost": 30,
+    "currency": "USD"
+  },
+  {
+    "id": 4,
+    "name": "Jacket",
+    "unit": "pcs",
+    "sellingPrice": 150,
+    "cost": 60,
+    "currency": "USD"
+  },
+  {
+    "id": 5,
+    "name": "Socks",
+    "unit": "pcs",
+    "sellingPrice": 10,
+    "cost": 3,
+    "currency": "USD"
+  },
+  {
+    "id": 6,
+    "name": "Hat",
+    "unit": "pcs",
+    "sellingPrice": 20,
+    "cost": 7,
+    "currency": "USD"
+  },
+  {
+    "id": 7,
+    "name": "Backpack",
+    "unit": "pcs",
+    "sellingPrice": 70,
+    "cost": 25,
+    "currency": "USD"
+  },
+  {
+    "id": 8,
+    "name": "Sunglasses",
+    "unit": "pcs",
+    "sellingPrice": 45,
+    "cost": 15,
+    "currency": "USD"
+  },
+  {
+    "id": 9,
+    "name": "Watch",
+    "unit": "pcs",
+    "sellingPrice": 120,
+    "cost": 50,
+    "currency": "USD"
+  },
+  {
+    "id": 10,
+    "name": "Belt",
+    "unit": "pcs",
+    "sellingPrice": 30,
+    "cost": 10,
+    "currency": "USD"
+  },
+  {
+    "id": 11,
+    "name": "Scarf",
+    "unit": "pcs",
+    "sellingPrice": 15,
+    "cost": 5,
+    "currency": "USD"
+  },
+  {
+    "id": 12,
+    "name": "Gloves",
+    "unit": "pcs",
+    "sellingPrice": 18,
+    "cost": 6,
+    "currency": "USD"
+  },
+  {
+    "id": 13,
+    "name": "Umbrella",
+    "unit": "pcs",
+    "sellingPrice": 22,
+    "cost": 8,
+    "currency": "USD"
+  },
+  {
+    "id": 14,
+    "name": "Wallet",
+    "unit": "pcs",
+    "sellingPrice": 35,
+    "cost": 12,
+    "currency": "USD"
+  },
+  {
+    "id": 15,
+    "name": "Tie",
+    "unit": "pcs",
+    "sellingPrice": 28,
+    "cost": 9,
+    "currency": "USD"
+  }
+]

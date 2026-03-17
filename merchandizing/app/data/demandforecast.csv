@@ -1,0 +1,3 @@
+facilityId,productId,type,parameters,timePeriodId
+1,16,Historical demand forecast,5,1
+1,17,Periodic demand forecast,2,2

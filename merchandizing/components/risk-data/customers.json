@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "Tokyo",
+    "type": "Customer",
+    "location": "Tokyo location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "user"
+  },
+  {
+    "id": 2,
+    "name": "Yokohama",
+    "type": "Customer",
+    "location": "Yokohama location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "user"
+  },
+  {
+    "id": 3,
+    "name": "Osaka",
+    "type": "Customer",
+    "location": "Osaka location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "user"
+  },
+  {
+    "id": 4,
+    "name": "Nagoya",
+    "type": "Customer",
+    "location": "Nagoya location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "user"
+  },
+  {
+    "id": 5,
+    "name": "Kobe",
+    "type": "Customer",
+    "location": "Kobe location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "user"
+  },
+  {
+    "id": 6,
+    "name": "Kyoto",
+    "type": "Customer",
+    "location": "Kyoto location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "user"
+  },
+  {
+    "id": 7,
+    "name": "Fukuoka",
+    "type": "Customer",
+    "location": "Fukuoka location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "user"
+  },
+  {
+    "id": 8,
+    "name": "Kawasaki",
+    "type": "Customer",
+    "location": "Kawasaki location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "user"
+  },
+  {
+    "id": 9,
+    "name": "Saitama",
+    "type": "Customer",
+    "location": "Saitama location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "user"
+  },
+  {
+    "id": 10,
+    "name": "Hiroshima",
+    "type": "Customer",
+    "location": "Hiroshima location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "user"
+  },
+  {
+    "id": 11,
+    "name": "Yono",
+    "type": "Customer",
+    "location": "Yono location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "user"
+  },
+  {
+    "id": 12,
+    "name": "Sendai",
+    "type": "Customer",
+    "location": "Sendai location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "user"
+  },
+  {
+    "id": 13,
+    "name": "Kitakyushu",
+    "type": "Customer",
+    "location": "Kitakyushu location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "user"
+  },
+  {
+    "id": 14,
+    "name": "Chiba",
+    "type": "Customer",
+    "location": "Chiba location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "user"
+  }
+]

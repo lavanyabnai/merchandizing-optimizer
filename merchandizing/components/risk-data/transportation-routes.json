@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "sources": "Factory Qui Nhon",
+    "destinations": "Port Vung Tau",
+    "product": "(All products)",
+    "vehicleType": "Truck",
+    "type": "LTL",
+    "parameters": "Partial delivery",
+    "priority": "FIFO",
+    "daysOfWeek": "Monday, Wednesday, Friday",
+    "startTime": "12:00 AM",
+    "endTime": "11:59 PM",
+    "timePeriod": "(All periods)",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 2,
+    "sources": "Port Vung Tau",
+    "destinations": "Port Kobe",
+    "product": "(All products)",
+    "vehicleType": "Container",
+    "type": "LTL",
+    "parameters": "Partial delivery",
+    "priority": "FIFO",
+    "daysOfWeek": "Monday, Tuesday, Wednesday, Thursday, Friday",
+    "startTime": "12:00 AM",
+    "endTime": "11:59 PM",
+    "timePeriod": "(All periods)",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 3,
+    "sources": "Port Kobe",
+    "destinations": "[Japan Sites]",
+    "product": "(All products)",
+    "vehicleType": "Truck",
+    "type": "LTL",
+    "parameters": "Partial delivery",
+    "priority": "FIFO",
+    "daysOfWeek": "Monday, Tuesday, Wednesday, Thursday, Friday",
+    "startTime": "12:00 AM",
+    "endTime": "11:59 PM",
+    "timePeriod": "(All periods)",
+    "inclusionType": "Include"
+  },
+  {
+    "id": 4,
+    "sources": "[Japan Sites]",
+    "destinations": "[Customers]",
+    "product": "(All products)",
+    "vehicleType": "Truck",
+    "type": "LTL",
+    "parameters": "Partial delivery",
+    "priority": "FIFO",
+    "daysOfWeek": "Monday, Tuesday, Wednesday, Thursday, Friday",
+    "startTime": "12:00 AM",
+    "endTime": "11:59 PM",
+    "timePeriod": "(All periods)",
+    "inclusionType": "Include"
+  }
+]

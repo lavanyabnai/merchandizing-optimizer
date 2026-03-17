@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Factory Qui Nhon",
+    "type": "Supplier",
+    "location": "Factory Qui Nhon location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "plus-circle"
+  },
+  {
+    "id": 2,
+    "name": "Tokyo Manufacturing",
+    "type": "Supplier",
+    "location": "Tokyo location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "plus-circle"
+  },
+  {
+    "id": 3,
+    "name": "Osaka Factory",
+    "type": "Supplier",
+    "location": "Osaka location",
+    "inclusionType": "Exclude",
+    "additionalParameters": "Additional parameters",
+    "icon": "plus-circle"
+  },
+  {
+    "id": 4,
+    "name": "Kobe Industrial",
+    "type": "Manufacturer",
+    "location": "Port Kobe location",
+    "inclusionType": "Include",
+    "additionalParameters": "Additional parameters",
+    "icon": "plus-circle"
+  }
+]

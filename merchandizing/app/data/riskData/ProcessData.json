@@ -1,0 +1,74 @@
+[
+  {
+    "facility": "Factory Berlin",
+    "product": "Product A",
+    "type": "Outbound Shipment",
+    "units": "Beer Pallets",
+    "cost": "0.66",
+    "currency": "USD",
+    "time": "(All periods)"
+  },
+  {
+    "facility": "DC Berlin",
+    "product": "Product A",
+    "type": "Outbound Shipment",
+    "units": "Beer Pallets",
+    "cost": "0.66",
+    "currency": "USD",
+    "time": "(All periods)"
+  },
+  {
+    "facility": "DC Berlin",
+    "product": "Product A",
+    "type": "Inbound Shipment",
+    "units": "Beer Pallets",
+    "cost": "1",
+    "currency": "USD",
+    "time": "(All periods)"
+  },
+  {
+    "facility": "DC Spain",
+    "product": "Product A",
+    "type": "Outbound Shipment",
+    "units": "Beer Pallets",
+    "cost": "0.33",
+    "currency": "USD",
+    "time": "(All periods)"
+  },
+  {
+    "facility": "Factory Berlin",
+    "product": "Product A",
+    "type": "Inbound Shipment",
+    "units": "Beer Pallets",
+    "cost": "0.5",
+    "currency": "USD",
+    "time": "(All periods)"
+  },
+  {
+    "facility": "Factory Berlin",
+    "product": "Crate A",
+    "type": "Inbound Shipment",
+    "units": "Crate Pallets",
+    "cost": "40",
+    "currency": "USD",
+    "time": "(All periods)"
+  },
+  {
+    "facility": "Factory Berlin",
+    "product": "Hops A",
+    "type": "Inbound Shipment",
+    "units": "Hops Pallets",
+    "cost": "40",
+    "currency": "USD",
+    "time": "(All periods)"
+  },
+  {
+    "facility": "Factory Berlin",
+    "product": "Malt A",
+    "type": "Inbound Shipment",
+    "units": "Malt Pallets",
+    "cost": "40",
+    "currency": "USD",
+    "time": "(All periods)"
+  }
+]

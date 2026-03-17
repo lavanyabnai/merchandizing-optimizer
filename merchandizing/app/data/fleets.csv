@@ -1,0 +1,6 @@
+facilityId,vehicleType,quantity,cost,currency,timeunit
+33,car,1,5,USD,days
+33,car,2,10,USD,days
+33,car,3,15,USD,days
+33,car,4,20,USD,days
+33,car,5,25,USD,days

@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm test:run:*)",
+      "Bash(node -e:*)",
+      "Bash(npx playwright install:*)",
+      "Bash(pnpm test:coverage:*)",
+      "Bash(pnpm exec playwright test:*)",
+      "Bash(.venvScriptsActivate.ps1)",
+      "Bash(cd:*)",
+      "Bash(test:*)",
+      "Bash(find:*)",
+      "Bash(pnpm update:*)",
+      "Bash(vercel --prod --yes)",
+      "Bash(vercel inspect merchandizing-optimizer-601wbnpie-lavs-projects-3366b3ee.vercel.app --logs)",
+      "Bash(npx vercel:*)",
+      "Bash(ls -la /d/merchandizing-optimizer/app/\\\\\\(inventory\\\\\\)/merchandizing-optimizer/monte-carlo-simulation/)"
+    ],
+    "additionalDirectories": [
+      "D:\\merchandizing-optimizer\\features\\assortment\\components"
+    ]
+  }
+}

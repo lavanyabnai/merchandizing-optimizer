@@ -1,0 +1,46 @@
+[
+  {
+    "sources": "Factory Berlin",
+    "destination": "DC",
+    "product": "(All products)",
+    "vehicletype": "Truck",
+    "type":"LTL",
+    "parameter": "Partial delivery",
+    "priority": "FIFO",
+    "Days": "All days",
+    "time": "12:00 AM"
+  },
+  {
+    "sources": "Supplier",
+    "destination": "Factory Berlin",
+    "product": "(All products)",
+    "vehicletype": "Truck",
+    "type": "LTL",
+    "parameter": "Partial delivery",
+    "priority": "FIFO",
+    "Days": "All days",
+    "time": "12:00 AM"
+  },
+  {
+    "sources": "DC Berlin",
+    "destination": "Customer",
+    "product": "(All products)",
+    "vehicletype": "Truck",
+    "type": "LTL",
+    "parameter": "Partial delivery",
+    "priority": "FIFO",
+    "Days": "All days",
+    "time": "12:00 AM"
+  },
+  {
+    "sources": "DC Spain",
+    "destination": "Customer",
+    "product": "(All products)",
+    "vehicletype": "Truck",
+    "type": "LTL",
+    "parameter": "Partial delivery",
+    "priority": "FIFO",
+    "Days": "All days",
+    "time": "12:00 AM"
+  }
+]
