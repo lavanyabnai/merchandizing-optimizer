@@ -14,7 +14,7 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell as TCell 
 import { Badge } from "@/components/ui/badge";
 
 // ═══════════════════════════════════════════════════════════════
-// SYNTHETIC DATA LAYER — Cola CSD data harmonized with dunnhumby
+// SYNTHETIC DATA LAYER — Cola CSD synthetic data
 // ═══════════════════════════════════════════════════════════════
 
 const BRAND_COLORS: Record<string, string> = {
@@ -438,10 +438,10 @@ function Phase1Section() {
 
   return (
     <div className="space-y-6">
-      <SectionHeader title="Data Exploration" subtitle="Understanding the dunnhumby CSD transaction data — distributions, trends, and early patterns" />
+      <SectionHeader title="Data Exploration" subtitle="Understanding the CSD transaction data — distributions, trends, and early patterns" />
 
       {/* Data inventory */}
-      <AnalysisCard title="Data Inventory — dunnhumby Complete Journey" badge="8 Tables" insight="The dataset spans 2,500 households over 52 weeks with 2.6M transactions. Cola sub-commodity is our MNL modeling focus with 44 SKUs across 8 brands.">
+      <AnalysisCard title="Data Inventory — Complete Journey" badge="8 Tables" insight="The dataset spans 2,500 households over 52 weeks with 2.6M transactions. Cola sub-commodity is our MNL modeling focus with 44 SKUs across 8 brands.">
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>

@@ -431,7 +431,7 @@ export default function CDTAnalysisApp() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-slate-800">Consumer Decision Tree Analysis</h1>
-            <p className="text-sm text-slate-500 mt-1">Carbonated Soft Drinks · dunnhumby Complete Journey · 2,500 Households · 52 Weeks</p>
+            <p className="text-sm text-slate-500 mt-1">Carbonated Soft Drinks · Complete Journey · 2,500 Households · 52 Weeks</p>
           </div>
           <div className="flex items-center gap-2">
             <Badge className="bg-teal-100 text-teal-800 border-teal-300">Layer 1: Category Intelligence</Badge>
@@ -550,7 +550,7 @@ function Phase1Section() {
   return (
     <div className="space-y-6">
       <SectionHeader title="Data Inventory & Exploration"
-        subtitle="Understanding the dunnhumby Complete Journey dataset — schema, hierarchy depth, transaction patterns, and data quality. 30-40% of CDT project time is invested here." />
+        subtitle="Understanding the Complete Journey dataset — schema, hierarchy depth, transaction patterns, and data quality. 30-40% of CDT project time is invested here." />
 
       {/* 1.1 Data Inventory */}
       <AnalysisCard title="1.1 — Data Inventory & Schema Discovery" methodology="8 CSV files · Entity-Relationship Mapping">

@@ -237,8 +237,8 @@ export default function SpaceAllocationOptimizer() {
           <AnalysisCard title="Data Flow" badge="5-stage pipeline">
             <div className="grid grid-cols-5 gap-3">
               {[
-                {s:"1",l:"CDT Analysis",d:"Consumer Decision Tree → 5 breakfast subcategories (Cold Cereal, Hot Cereal, Pancake, Syrup, Bars)",f:"dunnhumby BatF",active:false},
-                {s:"2",l:"Store Clustering",d:"KMeans/GMM on Complete Journey → 4 clusters (Urban, Suburban, Premium, Rural) — 760 stores",f:"dunnhumby CJ",active:false},
+                {s:"1",l:"CDT Analysis",d:"Consumer Decision Tree → 5 breakfast subcategories (Cold Cereal, Hot Cereal, Pancake, Syrup, Bars)",f:"BatF Dataset",active:false},
+                {s:"2",l:"Store Clustering",d:"KMeans/GMM on Complete Journey → 4 clusters (Urban, Suburban, Premium, Rural) — 760 stores",f:"Complete Journey",active:false},
                 {s:"3",l:"Space Elasticity",d:"Log-log regression → 5x5 elasticity matrix per cluster with R² > 0.85",f:"Layer 1",active:false},
                 {s:"→",l:"Space Allocation",d:"MILP + ADMM → optimal feet per subcategory per cluster under shared fixture budget",f:"THIS APP",active:true},
                 {s:"5",l:"Assortment Opt",d:"MNL choice model → SKU selection within space budgets from this optimizer",f:"Layer 2",active:false},

@@ -14,7 +14,7 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell as TCell 
 import { Badge } from "@/components/ui/badge";
 
 // ═══════════════════════════════════════════════════════════════
-// SYNTHETIC DATA LAYER — Cola CSD data harmonized with dunnhumby
+// SYNTHETIC DATA LAYER — Cola CSD synthetic data
 // ═══════════════════════════════════════════════════════════════
 
 const BRAND_COLORS: Record<string, string> = {
@@ -453,7 +453,7 @@ function Phase1Section() {
       <SectionHeader title="Data Exploration" subtitle="Understanding SKU-level economics, shelf productivity, and promotional dynamics before optimization" />
 
       {/* Data inventory */}
-      <AnalysisCard title="Data Sources — dunnhumby + MNL Outputs" badge="Input Pipeline" insight="This optimizer consumes MNL demand model outputs (choice probabilities, substitution matrix) combined with transaction economics (margin, promo lift) and planogram data (facings, space elasticity).">
+      <AnalysisCard title="Data Sources — MNL Outputs" badge="Input Pipeline" insight="This optimizer consumes MNL demand model outputs (choice probabilities, substitution matrix) combined with transaction economics (margin, promo lift) and planogram data (facings, space elasticity).">
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>

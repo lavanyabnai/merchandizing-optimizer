@@ -13,7 +13,7 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell as TCell 
 import { Badge } from "@/components/ui/badge";
 
 // ═══════════════════════════════════════════════════════════════
-// SYNTHETIC DATA LAYER — Cola CSD · harmonized with dunnhumby
+// SYNTHETIC DATA LAYER — Cola CSD · harmonized CSD data
 // ═══════════════════════════════════════════════════════════════
 
 const BRAND_COLORS: Record<string, string> = {

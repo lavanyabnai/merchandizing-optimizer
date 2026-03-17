@@ -370,7 +370,7 @@ function PipelineSection({ data, pipelineSteps: steps }: { data: DataRow[]; pipe
 
       <AnalysisCard title="Data Flow" badge="Pipeline">
         <div className="flex items-center gap-3 flex-wrap">
-          {[{ l:"POS Transactions", s:"dunnhumby BatF" }, { l:"Store Clustering", s:"4 clusters (KMeans/GMM)" }, { l:"CDT Structure", s:"5 subcategories" }, { l:"Space Data", s:"Weekly ft allocations" }].map((item, i) => (
+          {[{ l:"POS Transactions", s:"Breakfast at the Frat" }, { l:"Store Clustering", s:"4 clusters (KMeans/GMM)" }, { l:"CDT Structure", s:"5 subcategories" }, { l:"Space Data", s:"Weekly ft allocations" }].map((item, i) => (
             <React.Fragment key={i}>
               {i > 0 && <ArrowRight size={14} className="text-slate-400"/>}
               <div className="border border-slate-300 bg-slate-50 rounded-lg px-4 py-2.5">
@@ -1049,7 +1049,7 @@ export default function SpaceElasticityApp() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-slate-800">Space Elasticity Estimation</h1>
-            <p className="text-sm text-slate-500 mt-1">Log-log regression for space-to-sales relationships &middot; dunnhumby Breakfast at the Frat</p>
+            <p className="text-sm text-slate-500 mt-1">Log-log regression for space-to-sales relationships</p>
           </div>
           <div className="flex items-center gap-2">
             <Badge className="bg-cyan-100 text-cyan-800 border-cyan-300">Layer 1: Intelligence</Badge>

@@ -121,7 +121,7 @@ export function OptimizationDocs() {
             </li>
             <li>
               <strong>Tesco</strong> pioneered &quot;range review&quot; processes that
-              combine dunnhumby shopper analytics with mathematical optimization
+              combine shopper analytics with mathematical optimization
               to rationalize assortments while protecting shopper choice.
             </li>
           </ul>

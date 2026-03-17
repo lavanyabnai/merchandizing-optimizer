@@ -127,7 +127,7 @@ export function ClusteringDocs() {
               non-obvious store similarities.
             </li>
             <li>
-              <strong>dunnhumby (Tesco)</strong> pioneered loyalty-data-driven
+              <strong>Tesco</strong> pioneered loyalty-data-driven
               store segmentation, using household-level purchase data to cluster
               stores by the composition of their shopper base rather than just
               aggregate sales.

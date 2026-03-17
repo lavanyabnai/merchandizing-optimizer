@@ -34,7 +34,7 @@ const axisTick_sm = { fill: "#475569", fontSize: 11 };
 const gridStroke = "#e2e8f0";
 
 // ═══════════════════════════════════════════════════════════════
-// DATA — harmonized dunnhumby CSD cola dataset
+// DATA — CSD cola dataset
 // ═══════════════════════════════════════════════════════════════
 
 const SKU_DATA = [
@@ -382,7 +382,7 @@ function Phase1Section() {
       <SectionHeader title="Data & Setup" subtitle="SKU candidate pool, space budget constraints, and MNL utility inputs from upstream models" />
 
       {/* SKU Candidate Pool Table */}
-      <AnalysisCard title="SKU Candidate Pool" badge="44 SKUs" insight="All 44 CSD SKUs from dunnhumby dataset with MNL-estimated choice shares and utility scores.">
+      <AnalysisCard title="SKU Candidate Pool" badge="44 SKUs" insight="All 44 CSD SKUs from CSD dataset with MNL-estimated choice shares and utility scores.">
         <div className="max-h-[400px] overflow-y-auto">
           <Table>
             <TableHeader>
@@ -1192,7 +1192,7 @@ export default function SolverApproachesApp() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-slate-800">Solver Approaches — Assortment Optimization</h1>
-            <p className="text-sm text-slate-500 mt-1">Column Generation · Benders Decomposition · Hierarchical Multi-Level — dunnhumby CSD dataset</p>
+            <p className="text-sm text-slate-500 mt-1">Column Generation · Benders Decomposition · Hierarchical Multi-Level</p>
           </div>
           <div className="flex items-center gap-2">
             <Badge className="bg-indigo-100 text-indigo-800 border-indigo-300">Layer 2: Assortment</Badge>
